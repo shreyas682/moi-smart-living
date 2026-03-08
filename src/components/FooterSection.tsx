@@ -9,22 +9,28 @@ const FooterSection = () => {
             MOI <span className="text-gradient-blue">Technologies</span>
           </h3>
           <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-            Smart solutions for modern spaces — intelligent lighting and connected automation.
+            Smart solutions for modern spaces and intelligent automation.
           </p>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li className="flex items-center gap-2"><Mail size={16} className="text-primary" /> contact@moitech.com</li>
             <li className="flex items-center gap-2"><Phone size={16} className="text-primary" /> +91 98765 43210</li>
-            <li className="flex items-center gap-2"><MapPin size={16} className="text-primary" /> Mumbai, India</li>
+            <li className="flex items-center gap-2"><MapPin size={16} className="text-primary" /> India</li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">Quick Links</h4>
+          <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">Products</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><a href="#products" className="hover:text-primary transition-colors">Products</a></li>
-            <li><a href="#solutions" className="hover:text-primary transition-colors">Solutions</a></li>
-            <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
-            <li><a href="#resources" className="hover:text-primary transition-colors">Resources</a></li>
+            <li><a href="#products" className="hover:text-primary transition-colors">Two-Node Smart Switch</a></li>
+            <li><a href="#products" className="hover:text-primary transition-colors">LED Controller White Light</a></li>
+            <li><a href="#products" className="hover:text-primary transition-colors">LED Controller RGB</a></li>
+          </ul>
+
+          <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mt-8 mb-4">Company</h4>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="#blog" className="hover:text-primary transition-colors">Blog</a></li>
+            <li><a href="#partner" className="hover:text-primary transition-colors">Partners</a></li>
             <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
           </ul>
         </div>

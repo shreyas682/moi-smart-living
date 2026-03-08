@@ -6,6 +6,7 @@ import SmartSolutionsSection from "@/components/SmartSolutionsSection";
 import AboutSection from "@/components/AboutSection";
 import PartnerBannerSection from "@/components/PartnerBannerSection";
 import PartnerFormSection from "@/components/PartnerFormSection";
+import BlogSection from "@/components/BlogSection";
 import ResourcesSection from "@/components/ResourcesSection";
 import CTASection from "@/components/CTASection";
 import FooterSection from "@/components/FooterSection";
@@ -22,6 +23,7 @@ const Index = () => {
       <AboutSection />
       <PartnerBannerSection />
       <PartnerFormSection />
+      <BlogSection />
       <ResourcesSection />
       <CTASection />
       <FooterSection />
