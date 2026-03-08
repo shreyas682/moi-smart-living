@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ToggleRight, Lightbulb, Palette } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
-const products = [
-  { name: "Two-Node Smart Switch", icon: ToggleRight },
-  { name: "LED Controller White Light", icon: Lightbulb },
-  { name: "LED Controller RGB", icon: Palette },
+const navLinks = [
+  { name: "Home", href: "#" },
+  { name: "Products", href: "#products" },
+  { name: "Solutions", href: "#solutions" },
+  { name: "Partners", href: "#partners" },
+  { name: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -29,34 +30,16 @@ const Navbar = () => {
           MOI <span className="text-gradient-blue">Technologies</span>
         </a>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Home</a>
-          <div
-            className="relative"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
-          >
-            <button className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">
-              Products
-            </button>
-            {dropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 w-64 card-neon rounded-lg shadow-xl animate-fade-in overflow-hidden">
-                {products.map((p) => (
-                  <a
-                    key={p.name}
-                    href="#products"
-                    className="flex items-center gap-3 px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-colors"
-                  >
-                    <p.icon size={18} className="text-primary" />
-                    {p.name}
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
-          <a href="#blog" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Blog</a>
-          <a href="#partner" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Partners</a>
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
+            >
+              {link.name}
+            </a>
+          ))}
           <a
             href="#contact"
             className="px-5 py-2 rounded-lg btn-gradient-blue text-primary-foreground text-sm font-semibold"
@@ -65,26 +48,31 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile toggle */}
         <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-card border-t border-primary/10 animate-fade-in">
           <div className="flex flex-col px-6 py-4 gap-4">
-            <a href="#" className="text-sm text-muted-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>Home</a>
-            <p className="text-xs text-muted-foreground uppercase tracking-wider">Products</p>
-            {products.map((p) => (
-              <a key={p.name} href="#products" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>
-                <p.icon size={16} className="text-primary" /> {p.name}
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm text-muted-foreground hover:text-primary"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.name}
               </a>
             ))}
-            <a href="#blog" className="text-sm text-muted-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>Blog</a>
-            <a href="#partner" className="text-sm text-muted-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>Partners</a>
-            <a href="#contact" className="px-5 py-2 rounded-lg btn-gradient-blue text-primary-foreground text-sm font-semibold text-center" onClick={() => setMobileOpen(false)}>Contact Us</a>
+            <a
+              href="#contact"
+              className="px-5 py-2 rounded-lg btn-gradient-blue text-primary-foreground text-sm font-semibold text-center"
+              onClick={() => setMobileOpen(false)}
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       )}
