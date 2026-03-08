@@ -1,14 +1,9 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import FeaturesSection from "@/components/FeaturesSection";
 import ProductShowcase from "@/components/ProductShowcase";
-import SmartSolutionsSection from "@/components/SmartSolutionsSection";
-import AboutSection from "@/components/AboutSection";
-import PartnerBannerSection from "@/components/PartnerBannerSection";
-import PartnerFormSection from "@/components/PartnerFormSection";
-import BlogSection from "@/components/BlogSection";
-import ResourcesSection from "@/components/ResourcesSection";
-import CTASection from "@/components/CTASection";
+import FeaturesSection from "@/components/FeaturesSection";
+import PartnersSection from "@/components/PartnersSection";
+import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -17,15 +12,10 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-      <FeaturesSection />
       <ProductShowcase />
-      <SmartSolutionsSection />
-      <AboutSection />
-      <PartnerBannerSection />
-      <PartnerFormSection />
-      <BlogSection />
-      <ResourcesSection />
-      <CTASection />
+      <FeaturesSection />
+      <PartnersSection />
+      <ContactSection />
       <FooterSection />
       <WhatsAppButton />
     </div>
