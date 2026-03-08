@@ -31,6 +31,7 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
+          <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Home</a>
           <div
             className="relative"
             onMouseEnter={() => setDropdownOpen(true)}
@@ -54,8 +55,8 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Blog</a>
-          <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Partners</a>
+          <a href="#blog" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Blog</a>
+          <a href="#partner" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Partners</a>
           <a
             href="#contact"
             className="px-5 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:brightness-110 transition-all"
@@ -74,14 +75,15 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="md:hidden bg-card border-t border-border animate-fade-in">
           <div className="flex flex-col px-6 py-4 gap-4">
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Home</a>
             <p className="text-xs text-muted-foreground uppercase tracking-wider">Products</p>
             {products.map((p) => (
               <a key={p.name} href="#products" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>
                 <p.icon size={16} className="text-primary" /> {p.name}
               </a>
             ))}
-            <a href="#about" className="text-sm text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Blog</a>
-            <a href="#about" className="text-sm text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Partners</a>
+            <a href="#blog" className="text-sm text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Blog</a>
+            <a href="#partner" className="text-sm text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Partners</a>
             <a href="#contact" className="px-5 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold text-center" onClick={() => setMobileOpen(false)}>Contact Us</a>
           </div>
         </div>
