@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import productSwitch from "@/assets/product-smart-switch.jpg";
 import productWhite from "@/assets/product-led-white.jpg";
 import productRgb from "@/assets/product-led-rgb.jpg";
@@ -23,43 +24,64 @@ const products = [
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.15, ease: "easeOut" as const },
+  }),
+};
+
 const ProductShowcase = () => {
   return (
-    <section id="products" className="py-24 px-6">
-      <div className="section-divider max-w-4xl mx-auto mb-24" />
+    <section id="products" className="py-28 px-6">
+      <div className="section-divider max-w-4xl mx-auto mb-28" />
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
-          Our Smart Home <span className="text-gradient-blue">Products</span>
-        </h2>
-        <p className="text-center text-muted-foreground mb-16 max-w-xl mx-auto">
-          Premium smart-home devices built for the future.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
+            Our Smart Home <span className="text-gradient-cyan">Products</span>
+          </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto">
+            Premium smart-home devices built for the future.
+          </p>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {products.map((p, i) => (
-            <div
+            <motion.div
               key={p.name}
-              className="group card-neon rounded-xl overflow-hidden animate-fade-in-up hover:-translate-y-2 transition-transform duration-300"
-              style={{ animationDelay: `${i * 0.15}s` }}
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              className="group card-premium rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300"
             >
-              <div className="overflow-hidden h-56">
+              <div className="overflow-hidden h-64 bg-secondary">
                 <img
                   src={p.image}
                   alt={p.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-foreground mb-2">{p.name}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.description}</p>
+              <div className="p-7">
+                <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">{p.name}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5">{p.description}</p>
                 <a
                   href="#"
-                  className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                  className="inline-block px-5 py-2 rounded-lg btn-ghost text-sm font-semibold"
                 >
-                  Learn More →
+                  Learn More
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

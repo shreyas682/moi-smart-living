@@ -14,7 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Sora", "sans-serif"],
+      },
+      letterSpacing: {
+        tighter: "-0.04em",
+        tight: "-0.02em",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -84,8 +88,8 @@ export default {
           "100%": { opacity: "1" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(210 100% 56% / 0.2)" },
-          "50%": { boxShadow: "0 0 40px hsl(210 100% 56% / 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(190 100% 50% / 0.2)" },
+          "50%": { boxShadow: "0 0 40px hsl(190 100% 50% / 0.5)" },
         },
       },
       animation: {

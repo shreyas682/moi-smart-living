@@ -22,12 +22,12 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-md border-b border-primary/10" : "bg-transparent"
+        scrolled ? "glass-nav" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        <a href="#" className="text-xl font-bold tracking-tight text-foreground">
-          MOI <span className="text-gradient-blue">Technologies</span>
+      <div className="container mx-auto flex items-center justify-between py-5 px-6">
+        <a href="#" className="text-xl font-bold tracking-tighter text-foreground">
+          MOI <span className="text-gradient-cyan">Technologies</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -35,14 +35,14 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
+              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium tracking-tight"
             >
               {link.name}
             </a>
           ))}
           <a
             href="#contact"
-            className="px-5 py-2 rounded-lg btn-gradient-blue text-primary-foreground text-sm font-semibold"
+            className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight animate-pulse-glow"
           >
             Contact Us
           </a>
@@ -54,13 +54,13 @@ const Navbar = () => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-card border-t border-primary/10 animate-fade-in">
-          <div className="flex flex-col px-6 py-4 gap-4">
+        <div className="md:hidden glass-nav animate-fade-in">
+          <div className="flex flex-col px-6 py-6 gap-5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-primary"
+                className="text-sm text-muted-foreground hover:text-foreground font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.name}
@@ -68,7 +68,7 @@ const Navbar = () => {
             ))}
             <a
               href="#contact"
-              className="px-5 py-2 rounded-lg btn-gradient-blue text-primary-foreground text-sm font-semibold text-center"
+              className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold text-center"
               onClick={() => setMobileOpen(false)}
             >
               Contact Us
