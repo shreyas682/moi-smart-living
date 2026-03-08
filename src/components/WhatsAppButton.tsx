@@ -6,7 +6,8 @@ const WhatsAppButton = () => {
       href="https://wa.me/919876543210"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[hsl(142,70%,45%)] flex items-center justify-center shadow-lg hover:scale-110 transition-transform animate-glow-pulse"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+      style={{ background: "hsl(142 70% 45%)", boxShadow: "0 0 20px hsl(142 70% 45% / 0.4)" }}
       aria-label="Chat on WhatsApp"
     >
       <MessageCircle size={28} className="text-foreground" />

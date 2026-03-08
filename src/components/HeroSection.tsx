@@ -1,37 +1,50 @@
+import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       <img
         src={heroBg}
-        alt="Modern smart home with ambient blue lighting and automation"
+        alt="Modern smart home with ambient blue lighting"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 hero-overlay" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/3 right-1/4 w-72 h-72 rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
 
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-extrabold text-foreground mb-6 animate-fade-in-up">
-          Smart Living. <span className="text-gradient-blue">Simplified.</span>
-        </h1>
-        <p
-          className="text-lg md:text-xl text-muted-foreground mb-10 animate-fade-in-up"
-          style={{ animationDelay: "0.2s" }}
-        >
-          Advanced Smart Home Solutions by MOI Technologies.
-        </p>
-        <div
-          className="animate-fade-in-up"
-          style={{ animationDelay: "0.4s" }}
-        >
-          <a
-            href="#products"
-            className="px-8 py-3.5 rounded-lg btn-gradient-blue text-primary-foreground font-semibold"
+      {/* Ambient glow */}
+      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[150px] pointer-events-none" />
+
+      <div className="relative z-10 container mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left: Text */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Explore Products
-          </a>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-foreground mb-6 leading-[0.95]">
+              Smart Living.
+              <br />
+              <span className="text-gradient-cyan">Simplified.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-lg leading-relaxed">
+              Advanced Smart Home Solutions by MOI Technologies.
+            </p>
+            <a
+              href="#products"
+              className="inline-block px-10 py-4 rounded-lg btn-primary-cyan text-base font-bold tracking-tight animate-pulse-glow"
+            >
+              Explore Products
+            </a>
+          </motion.div>
+
+          {/* Right: Hero image visible through overlay */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="hidden lg:block"
+          />
         </div>
       </div>
     </section>
