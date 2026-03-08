@@ -26,6 +26,7 @@ const features = [
 const FeaturesSection = () => {
   return (
     <section className="py-24 px-6">
+      <div className="section-divider max-w-4xl mx-auto mb-24" />
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
           Why Choose <span className="text-gradient-blue">MOI</span>
@@ -38,7 +39,7 @@ const FeaturesSection = () => {
           {features.map((f, i) => (
             <div
               key={f.title}
-              className="group bg-card border border-border rounded-xl p-8 text-center transition-all duration-300 hover:glow-blue hover:border-primary/40 animate-fade-in-up"
+              className="group card-neon rounded-xl p-8 text-center animate-fade-in-up"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-5 group-hover:bg-primary/20 transition-colors">

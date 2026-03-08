@@ -1,6 +1,7 @@
 const CTASection = () => {
   return (
     <section className="py-24 px-6">
+      <div className="section-divider max-w-4xl mx-auto mb-24" />
       <div className="container mx-auto text-center max-w-3xl">
         <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
           Partner with <span className="text-gradient-blue">MOI Technologies</span>
