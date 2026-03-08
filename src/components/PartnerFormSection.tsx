@@ -40,12 +40,12 @@ const PartnerFormSection = () => {
         </p>
 
         {submitted ? (
-          <div className="text-center py-16 bg-card border border-border rounded-xl">
+          <div className="text-center py-16 card-neon rounded-xl">
             <h3 className="text-2xl font-bold text-foreground mb-2">Thank you!</h3>
             <p className="text-muted-foreground">We'll get back to you shortly.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl p-8 space-y-6">
+          <form onSubmit={handleSubmit} className="card-neon rounded-xl p-8 space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
@@ -107,7 +107,7 @@ const PartnerFormSection = () => {
               <Textarea id="message" placeholder="Tell us about your requirements..." rows={4} />
             </div>
 
-            <Button type="submit" className="w-full" size="lg">
+            <Button type="submit" className="w-full btn-gradient-blue border-0" size="lg">
               Submit
             </Button>
           </form>

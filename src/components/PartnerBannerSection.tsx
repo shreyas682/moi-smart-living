@@ -4,10 +4,11 @@ const PartnerBannerSection = () => {
   return (
     <section id="partner" className="py-24 px-6">
       <div className="container mx-auto">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-12 md:p-20 text-center">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
+        <div className="relative overflow-hidden rounded-2xl card-neon p-12 md:p-20 text-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
           <div className="relative z-10">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/10 text-accent mb-8">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 text-primary mb-8">
               <Handshake size={40} />
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
@@ -18,7 +19,7 @@ const PartnerBannerSection = () => {
             </p>
             <a
               href="#partner-form"
-              className="inline-block px-8 py-3.5 rounded-lg border-2 border-accent text-accent font-semibold hover:bg-accent hover:text-accent-foreground transition-all"
+              className="inline-block px-8 py-3.5 rounded-lg btn-outline-blue text-primary font-semibold"
             >
               Become a Partner
             </a>

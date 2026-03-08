@@ -8,7 +8,10 @@ const HeroSection = () => {
         alt="Smart home automation environment"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-background/60 hero-overlay" />
+      <div className="absolute inset-0 hero-overlay" />
+      {/* Neon ambient glow elements */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/4 w-72 h-72 rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-extrabold text-foreground mb-6 animate-fade-in-up">
@@ -26,7 +29,7 @@ const HeroSection = () => {
         >
           <a
             href="#products"
-            className="px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold hover:brightness-110 transition-all glow-blue"
+            className="px-8 py-3.5 rounded-lg btn-gradient-blue text-primary-foreground font-semibold"
           >
             Explore Products
           </a>

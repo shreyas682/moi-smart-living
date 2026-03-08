@@ -26,6 +26,7 @@ const solutions = [
 const SmartSolutionsSection = () => {
   return (
     <section className="py-24 px-6">
+      <div className="section-divider max-w-4xl mx-auto mb-24" />
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
           Smart <span className="text-gradient-blue">Solutions</span>
@@ -38,7 +39,7 @@ const SmartSolutionsSection = () => {
           {solutions.map((s, i) => (
             <div
               key={s.title}
-              className="flex gap-5 p-6 bg-card border border-border rounded-xl transition-all duration-300 hover:border-primary/40 hover:glow-blue animate-fade-in-up"
+              className="flex gap-5 p-6 card-neon rounded-xl animate-fade-in-up"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">

@@ -23,6 +23,7 @@ const products = [
 const ProductShowcase = () => {
   return (
     <section id="products" className="py-24 px-6">
+      <div className="section-divider max-w-4xl mx-auto mb-24" />
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
           Our <span className="text-gradient-blue">Products</span>
@@ -35,7 +36,7 @@ const ProductShowcase = () => {
           {products.map((p, i) => (
             <div
               key={p.name}
-              className="group bg-card border border-border rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:glow-blue gold-border-top animate-fade-in-up"
+              className="group card-neon rounded-xl overflow-hidden gold-border-top animate-fade-in-up hover:-translate-y-2 transition-transform duration-300"
               style={{ animationDelay: `${i * 0.15}s` }}
             >
               <div className="overflow-hidden h-56">

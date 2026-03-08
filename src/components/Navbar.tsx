@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : "bg-transparent"
+        scrolled ? "bg-background/95 backdrop-blur-md border-b border-primary/10" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
@@ -31,22 +31,22 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Home</a>
+          <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Home</a>
           <div
             className="relative"
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            <button className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+            <button className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">
               Products
             </button>
             {dropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-xl animate-fade-in overflow-hidden">
+              <div className="absolute top-full left-0 mt-2 w-64 card-neon rounded-lg shadow-xl animate-fade-in overflow-hidden">
                 {products.map((p) => (
                   <a
                     key={p.name}
                     href="#products"
-                    className="flex items-center gap-3 px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-colors"
                   >
                     <p.icon size={18} className="text-primary" />
                     {p.name}
@@ -55,11 +55,11 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <a href="#blog" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Blog</a>
-          <a href="#partner" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Partners</a>
+          <a href="#blog" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Blog</a>
+          <a href="#partner" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Partners</a>
           <a
             href="#contact"
-            className="px-5 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:brightness-110 transition-all"
+            className="px-5 py-2 rounded-lg btn-gradient-blue text-primary-foreground text-sm font-semibold"
           >
             Contact Us
           </a>
@@ -73,18 +73,18 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-card border-t border-border animate-fade-in">
+        <div className="md:hidden bg-card border-t border-primary/10 animate-fade-in">
           <div className="flex flex-col px-6 py-4 gap-4">
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Home</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>Home</a>
             <p className="text-xs text-muted-foreground uppercase tracking-wider">Products</p>
             {products.map((p) => (
-              <a key={p.name} href="#products" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>
+              <a key={p.name} href="#products" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>
                 <p.icon size={16} className="text-primary" /> {p.name}
               </a>
             ))}
-            <a href="#blog" className="text-sm text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Blog</a>
-            <a href="#partner" className="text-sm text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Partners</a>
-            <a href="#contact" className="px-5 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold text-center" onClick={() => setMobileOpen(false)}>Contact Us</a>
+            <a href="#blog" className="text-sm text-muted-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>Blog</a>
+            <a href="#partner" className="text-sm text-muted-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>Partners</a>
+            <a href="#contact" className="px-5 py-2 rounded-lg btn-gradient-blue text-primary-foreground text-sm font-semibold text-center" onClick={() => setMobileOpen(false)}>Contact Us</a>
           </div>
         </div>
       )}
