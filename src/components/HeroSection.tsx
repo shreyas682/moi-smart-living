@@ -3,32 +3,26 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      <img
-        src={heroBg}
-        alt="Modern smart home with ambient blue lighting"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 hero-overlay" />
-
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-background pt-24 pb-16 lg:pt-0 lg:pb-0">
       {/* Ambient glow */}
-      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[150px] pointer-events-none" />
 
       <div className="relative z-10 container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Text */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-left"
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-foreground mb-6 leading-[0.95] drop-shadow-[0_2px_8px_rgba(255,255,255,0.6)]">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-foreground mb-6 leading-[0.95]">
               Smart Living.
               <br />
-              <span className="text-primary">Simplified.</span>
+              <span className="text-gradient-cyan">Simplified.</span>
             </h1>
-            <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-lg leading-relaxed font-medium">
-              Advanced Smart Home Solutions by MOI Technologies.
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-lg leading-relaxed font-medium">
+              Advanced smart home solutions by MOI Technologies.
             </p>
             <a
               href="#products"
@@ -38,13 +32,24 @@ const HeroSection = () => {
             </a>
           </motion.div>
 
-          {/* Right: Hero image visible through overlay */}
+          {/* Right: Hero image */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="hidden lg:block"
-          />
+            className="relative"
+          >
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                src={heroBg}
+                alt="Modern smart home with ambient blue lighting"
+                className="w-full h-[400px] md:h-[520px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-white/10 backdrop-blur-[1px]" />
+            </div>
+            {/* Soft glow behind image */}
+            <div className="absolute -inset-4 -z-10 bg-primary/10 blur-3xl rounded-full" />
+          </motion.div>
         </div>
       </div>
     </section>
