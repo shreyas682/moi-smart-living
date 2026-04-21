@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import moiLogo from "@/assets/moi-logo.svg";
 
 const navLinks = [
   { name: "Home", href: "#" },
@@ -26,8 +27,11 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
-        <a href="#" className="text-xl font-bold tracking-tighter text-foreground">
-          MOI <span className="text-gradient-cyan">Technologies</span>
+        <a href="#" className="flex items-center gap-3">
+          <img src={moiLogo} alt="MOI Technologies" className="h-9 w-auto invert" />
+          <span className="text-xl font-bold tracking-tighter text-foreground hidden sm:inline">
+            <span className="text-gradient-cyan">Technologies</span>
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
