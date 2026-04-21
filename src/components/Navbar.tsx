@@ -28,7 +28,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
         <a href="#" className="flex items-center gap-3">
-          <img src={moiLogo} alt="MOI Technologies" className="h-9 w-auto invert" />
+          <img src={moiLogo} alt="MOI Technologies" className="h-9 w-auto" />
           <span className="text-xl font-bold tracking-tighter text-foreground hidden sm:inline">
             <span className="text-gradient-cyan">Technologies</span>
           </span>
