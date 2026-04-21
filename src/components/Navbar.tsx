@@ -29,9 +29,6 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
         <a href="#" className="flex items-center gap-3">
           <img src={moiLogo} alt="MOI Technologies" className="h-9 w-auto" />
-          <span className="text-xl font-bold tracking-tighter text-foreground hidden sm:inline">
-            <span className="text-gradient-cyan">Technologies</span>
-          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -39,14 +36,14 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium tracking-tight"
+              className="relative text-foreground hover:text-primary transition-colors text-sm font-medium tracking-tight after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
             >
               {link.name}
             </a>
           ))}
           <a
             href="#contact"
-            className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight animate-pulse-glow"
+            className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight transition-transform hover:scale-105"
           >
             Contact Us
           </a>
@@ -64,7 +61,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground font-medium"
+                className="text-sm text-foreground hover:text-primary font-medium transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.name}
