@@ -39,13 +39,17 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="relative"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <div className="group relative rounded-3xl overflow-hidden shadow-2xl cursor-pointer">
               <img
                 src={heroBg}
-                alt="Modern smart home with ambient blue lighting"
-                className="w-full h-[400px] md:h-[520px] object-cover"
+                alt="Modern smart home with ambient lighting controlled via mobile app"
+                className="w-full h-[400px] md:h-[520px] object-cover transition-transform duration-300 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-white/10 backdrop-blur-[1px]" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-white/10 backdrop-blur-[1px] transition-opacity duration-300" />
+              {/* Orange overlay on hover */}
+              <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
+              {/* Orange glow ring on hover */}
+              <div className="absolute inset-0 rounded-3xl ring-0 group-hover:ring-4 ring-primary/40 transition-all duration-300" />
             </div>
             {/* Soft glow behind image */}
             <div className="absolute -inset-4 -z-10 bg-primary/10 blur-3xl rounded-full" />
