@@ -22,17 +22,17 @@ const HeroSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-foreground mb-6 leading-[0.95]">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-foreground mb-6 leading-[0.95] drop-shadow-[0_2px_8px_rgba(255,255,255,0.6)]">
               Smart Living.
               <br />
-              <span className="text-gradient-cyan">Simplified.</span>
+              <span className="text-primary">Simplified.</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-lg leading-relaxed">
+            <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-lg leading-relaxed font-medium">
               Advanced Smart Home Solutions by MOI Technologies.
             </p>
             <a
               href="#products"
-              className="inline-block px-10 py-4 rounded-lg btn-primary-cyan text-base font-bold tracking-tight animate-pulse-glow"
+              className="inline-block px-10 py-4 rounded-lg btn-primary-cyan text-base font-bold tracking-tight transition-transform hover:scale-105"
             >
               Explore Products
             </a>
