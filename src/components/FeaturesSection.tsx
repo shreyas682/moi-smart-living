@@ -38,7 +38,7 @@ const FeatureCard = ({ feature, index }: { feature: typeof features[0]; index: n
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       onMouseMove={handleMouseMove}
-      className="group relative card-premium rounded-2xl p-10 text-center overflow-hidden cursor-default"
+      className="group relative bg-white border border-border rounded-2xl p-10 text-center overflow-hidden cursor-default shadow-sm hover:-translate-y-2 hover:border-primary hover:shadow-lg transition-all duration-300"
     >
       {/* Radial gradient follow */}
       <div
