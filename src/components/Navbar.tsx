@@ -23,8 +23,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-nav" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav-dark ${
+        scrolled ? "shadow-lg" : ""
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
@@ -37,32 +37,32 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.href}
-              className="relative text-foreground hover:text-primary transition-colors text-sm font-medium tracking-tight after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+              className="relative text-white hover:text-primary transition-colors duration-300 text-sm font-medium tracking-tight after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
             >
               {link.name}
             </Link>
           ))}
           <Link
             to="/contact"
-            className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight transition-transform hover:scale-105"
+            className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight transition-transform duration-300 hover:scale-105"
           >
             Contact Us
           </Link>
         </div>
 
-        <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button className="md:hidden text-white" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden glass-nav animate-fade-in">
+        <div className="md:hidden nav-dark animate-fade-in">
           <div className="flex flex-col px-6 py-6 gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-sm text-foreground hover:text-primary font-medium transition-colors"
+                className="text-sm text-white hover:text-primary font-medium transition-colors duration-300"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.name}
