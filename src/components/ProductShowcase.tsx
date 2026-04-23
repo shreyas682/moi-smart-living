@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { products } from "@/data/products";
 
 const cardVariants = {
@@ -51,12 +52,12 @@ const ProductShowcase = () => {
               <div className="p-7">
                 <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">{p.name}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-5">{p.description}</p>
-                <a
-                  href={p.href}
+                <Link
+                  to={p.href}
                   className="inline-block px-5 py-2 rounded-lg btn-ghost text-sm font-semibold"
                 >
                   Learn More
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}

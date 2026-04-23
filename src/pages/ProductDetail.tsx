@@ -1,8 +1,26 @@
 import { Navigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Cable, Mic, Smartphone, Wifi } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { getProductByHref } from "@/data/products";
+import livingRoomImage from "@/assets/hero-bg.jpg";
+import bedroomImage from "@/assets/blog-led-automation.jpg";
+import phoneControlImage from "@/assets/blog-smart-home.jpg";
+
+const homeSteps = [
+  { icon: Cable, title: "Step 1", text: "Connect device to power" },
+  { icon: Smartphone, title: "Step 2", text: "Install mobile app" },
+  { icon: Wifi, title: "Step 3", text: "Connect to WiFi" },
+  { icon: Mic, title: "Step 4", text: "Control lights from app or voice" },
+];
+
+const usageImages = [
+  { src: livingRoomImage, alt: "Living room lighting controlled by smart home automation" },
+  { src: bedroomImage, alt: "Bedroom lighting setup with smart LED ambience" },
+  { src: phoneControlImage, alt: "Smart home control through a mobile phone" },
+];
 
 const ProductDetail = () => {
   const { pathname } = useLocation();
@@ -25,12 +43,12 @@ const ProductDetail = () => {
               <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed font-medium">
                 {product.shortDescription}
               </p>
-              <a
-                href="/#contact"
+              <Link
+                to="/contact"
                 className="inline-block px-10 py-4 rounded-lg btn-primary-cyan text-base font-bold tracking-tight transition-transform hover:scale-105"
               >
                 Contact Us
-              </a>
+              </Link>
             </div>
 
             <div className="group relative rounded-3xl overflow-hidden shadow-2xl bg-secondary">
@@ -83,6 +101,37 @@ const ProductDetail = () => {
                   <div className="text-primary mb-3">{review.rating}</div>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">“{review.quote}”</p>
                   <p className="text-sm font-bold text-foreground">{review.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-6 py-16 bg-secondary">
+          <div className="container mx-auto">
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tighter text-foreground mb-8 text-center">
+              How It Works in Your Home
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+              {homeSteps.map((step) => (
+                <div key={step.title} className="card-premium rounded-2xl p-6 text-center">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-4">
+                    <step.icon size={24} strokeWidth={1.8} />
+                  </div>
+                  <h3 className="text-base font-bold tracking-tight text-foreground mb-2">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{step.text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {usageImages.map((image) => (
+                <div key={image.alt} className="group relative rounded-2xl overflow-hidden card-premium bg-background">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-64 object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300 ease-out" />
                 </div>
               ))}
             </div>
