@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import moiLogo from "@/assets/moi-logo.svg";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Products", href: "/#products" },
-  { name: "Solutions", href: "/#solutions" },
-  { name: "Partners", href: "/#partners" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Products", href: "/products" },
+  { name: "Solutions", href: "/solutions" },
+  { name: "Partners", href: "/partners" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -33,20 +34,20 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               className="relative text-foreground hover:text-primary transition-colors text-sm font-medium tracking-tight after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
-          <a
-            href="/#contact"
+          <Link
+            to="/contact"
             className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight transition-transform hover:scale-105"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
 
         <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
@@ -58,22 +59,22 @@ const Navbar = () => {
         <div className="md:hidden glass-nav animate-fade-in">
           <div className="flex flex-col px-6 py-6 gap-5">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="text-sm text-foreground hover:text-primary font-medium transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
-            <a
-              href="/#contact"
+            <Link
+              to="/contact"
               className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold text-center"
               onClick={() => setMobileOpen(false)}
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       )}

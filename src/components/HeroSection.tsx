@@ -43,9 +43,9 @@ const HeroSection = () => {
               <img
                 src={heroBg}
                 alt="Modern smart home with ambient lighting controlled via mobile app"
-                className="w-full h-[400px] md:h-[520px] object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                className="w-full h-[420px] md:h-[560px] object-cover transition-transform duration-300 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-white/10 backdrop-blur-[1px] transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 transition-opacity duration-300" />
               {/* Orange overlay on hover */}
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
               {/* Orange glow ring on hover */}
