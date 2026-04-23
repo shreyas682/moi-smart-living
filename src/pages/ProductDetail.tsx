@@ -97,31 +97,33 @@ const ProductDetail = () => {
           </div>
         </section>
 
-        <section className="px-6 py-16 bg-secondary">
-          <div className="container mx-auto">
-            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tighter text-foreground mb-8 text-center">
-              How It Works in Your Home
+        <section className="px-6 py-20 bg-soft-orange">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-foreground mb-4 text-center">
+              How It Works in <span className="text-primary">Real Life</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-              {homeSteps.map((step) => (
-                <div key={step.title} className="card-premium rounded-2xl p-6 text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-4">
-                    <step.icon size={24} strokeWidth={1.8} />
-                  </div>
-                  <h3 className="text-base font-bold tracking-tight text-foreground mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{step.text}</p>
-                </div>
-              ))}
+            <p className="text-muted-foreground max-w-2xl mx-auto text-center mb-12">
+              Experience seamless smart home control with MOI devices. From installation to daily use,
+              everything is designed for simplicity, speed, and convenience.
+            </p>
+            <div className="rounded-3xl overflow-hidden shadow-xl bg-white">
+              <img
+                src={demoImage}
+                alt="MOI smart home devices demo: Two-Node Smart Switch, RGB and White LED Controllers"
+                loading="lazy"
+                className="w-full h-auto object-contain"
+              />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {usageImages.map((image) => (
-                <div key={image.alt} className="group relative rounded-2xl overflow-hidden card-premium bg-background">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-64 object-cover transition-transform duration-300 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300 ease-out" />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+              {realLifeSteps.map((step, idx) => (
+                <div
+                  key={step}
+                  className="bg-white border border-border rounded-xl p-5 text-center shadow-sm hover:border-primary hover:-translate-y-1 transition-all duration-300"
+                >
+                  <div className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary text-white text-sm font-bold mb-3">
+                    {idx + 1}
+                  </div>
+                  <p className="text-sm font-semibold text-foreground">{step}</p>
                 </div>
               ))}
             </div>
