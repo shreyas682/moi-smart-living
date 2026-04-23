@@ -3,11 +3,11 @@ import { Menu, X } from "lucide-react";
 import moiLogo from "@/assets/moi-logo.svg";
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "Products", href: "#products" },
-  { name: "Solutions", href: "#solutions" },
-  { name: "Partners", href: "#partners" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Products", href: "/#products" },
+  { name: "Solutions", href: "/#solutions" },
+  { name: "Partners", href: "/#partners" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 const Navbar = () => {
@@ -27,7 +27,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
-        <a href="#" className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3">
           <img src={moiLogo} alt="MOI Technologies" className="h-9 w-auto" />
         </a>
 
@@ -42,7 +42,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight transition-transform hover:scale-105"
           >
             Contact Us
@@ -68,7 +68,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold text-center"
               onClick={() => setMobileOpen(false)}
             >
