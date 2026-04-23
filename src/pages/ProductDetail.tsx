@@ -1,25 +1,15 @@
-import { Navigate, useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { Cable, Mic, Smartphone, Wifi } from "lucide-react";
+import { Navigate, useLocation, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { getProductByHref } from "@/data/products";
-import livingRoomImage from "@/assets/hero-bg.jpg";
-import bedroomImage from "@/assets/blog-led-automation.jpg";
-import phoneControlImage from "@/assets/blog-smart-home.jpg";
+import demoImage from "@/assets/demo-how-it-works.png";
 
-const homeSteps = [
-  { icon: Cable, title: "Step 1", text: "Connect device to power" },
-  { icon: Smartphone, title: "Step 2", text: "Install mobile app" },
-  { icon: Wifi, title: "Step 3", text: "Connect to WiFi" },
-  { icon: Mic, title: "Step 4", text: "Control lights from app or voice" },
-];
-
-const usageImages = [
-  { src: livingRoomImage, alt: "Living room lighting controlled by smart home automation" },
-  { src: bedroomImage, alt: "Bedroom lighting setup with smart LED ambience" },
-  { src: phoneControlImage, alt: "Smart home control through a mobile phone" },
+const realLifeSteps = [
+  "Connect device",
+  "Install mobile app",
+  "Pair with WiFi",
+  "Control via app or voice",
 ];
 
 const ProductDetail = () => {
