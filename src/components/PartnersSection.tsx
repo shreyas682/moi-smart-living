@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const PartnersSection = () => {
   return (
@@ -26,12 +27,12 @@ const PartnersSection = () => {
           <p className="text-lg text-white/70 mb-10 leading-relaxed text-center max-w-2xl">
             We collaborate with developers, architects, and system integrators to build the next generation of smart homes.
           </p>
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="inline-block px-10 py-4 rounded-lg btn-primary-cyan text-base font-bold tracking-tight transition-transform hover:scale-105"
           >
             Become a Partner
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
