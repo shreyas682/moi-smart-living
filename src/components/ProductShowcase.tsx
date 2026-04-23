@@ -1,28 +1,5 @@
 import { motion } from "framer-motion";
-import productSwitch from "@/assets/product-smart-switch.jpg";
-import productWhite from "@/assets/product-led-white.jpg";
-import productRgb from "@/assets/product-led-rgb.jpg";
-
-const products = [
-  {
-    name: "Two-Node Smart Switch",
-    description:
-      "A wireless smart switch designed for seamless control of lights and appliances. Compatible with smart assistants and modern home automation systems.",
-    image: productSwitch,
-  },
-  {
-    name: "LED Controller – White Light",
-    description:
-      "Smart LED controller designed to control brightness and schedules for white LED lighting systems.",
-    image: productWhite,
-  },
-  {
-    name: "LED Controller – RGB",
-    description:
-      "Advanced RGB lighting controller that allows users to customize colors, scenes, and ambience through a mobile app or voice assistant.",
-    image: productRgb,
-  },
-];
+import { products } from "@/data/products";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -75,7 +52,7 @@ const ProductShowcase = () => {
                 <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">{p.name}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-5">{p.description}</p>
                 <a
-                  href="#"
+                  href={p.href}
                   className="inline-block px-5 py-2 rounded-lg btn-ghost text-sm font-semibold"
                 >
                   Learn More
