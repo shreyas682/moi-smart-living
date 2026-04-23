@@ -45,6 +45,8 @@ const ProductDetail = () => {
               <img
                 src={product.image}
                 alt={product.name}
+                loading="eager"
+                decoding="async"
                 className="w-full h-[400px] md:h-[520px] object-contain transition-transform duration-300 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
@@ -73,9 +75,7 @@ const ProductDetail = () => {
               <h2 className="text-2xl md:text-3xl font-extrabold tracking-tighter text-foreground mb-6">
                 Why It’s Better
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">{product.whyBetter}</p>
-              <h3 className="text-xl font-bold tracking-tight text-foreground mb-3">Demo</h3>
-              <p className="text-muted-foreground leading-relaxed">{product.demoText}</p>
+              <p className="text-muted-foreground leading-relaxed">{product.whyBetter}</p>
             </div>
           </div>
         </section>
