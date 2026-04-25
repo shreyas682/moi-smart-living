@@ -1,6 +1,36 @@
 import productSwitch from "@/assets/product-smart-switch.jpg";
 import productWhite from "@/assets/product-led-white.jpg";
 import productRgb from "@/assets/product-led-rgb.jpg";
+import rgbSteps from "@/assets/rgb-steps.png";
+import rgbAmbient from "@/assets/rgb-ambient.png";
+import rgbParty from "@/assets/rgb-party.png";
+import rgbColorwheel from "@/assets/rgb-colorwheel.png";
+import switchSteps from "@/assets/switch-steps.png";
+import switchLivingRoom from "@/assets/switch-living-room.png";
+import switchFanLamp from "@/assets/switch-fan-lamp.png";
+import switchMobileApp from "@/assets/switch-mobile-app.png";
+
+export const productMedia: Record<
+  string,
+  { stepsImage: string; gallery: { src: string; caption: string }[] }
+> = {
+  "/product-smart-switch": {
+    stepsImage: switchSteps,
+    gallery: [
+      { src: switchLivingRoom, caption: "Living Room Lights ON" },
+      { src: switchFanLamp, caption: "Fan & Lamp ON" },
+      { src: switchMobileApp, caption: "Control from Anywhere" },
+    ],
+  },
+  "/product-led-rgb": {
+    stepsImage: rgbSteps,
+    gallery: [
+      { src: rgbAmbient, caption: "Ambient Lighting" },
+      { src: rgbParty, caption: "Party Mode" },
+      { src: rgbColorwheel, caption: "16 Million Colors at Your Fingertips" },
+    ],
+  },
+};
 
 export const products = [
   {
