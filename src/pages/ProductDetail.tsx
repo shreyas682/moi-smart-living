@@ -39,8 +39,9 @@ const ProductDetail = () => {
               <img
                 src={product.image}
                 alt={product.name}
-                loading="eager"
+                loading="lazy"
                 decoding="async"
+                style={{ objectPosition: "center" }}
                 className="w-full h-[400px] md:h-[520px] object-contain transition-transform duration-300 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
@@ -104,6 +105,7 @@ const ProductDetail = () => {
                     alt={`${product.name} step-by-step guide`}
                     loading="lazy"
                     decoding="async"
+                    style={{ objectPosition: "center" }}
                     className="w-full max-w-2xl h-auto object-contain"
                   />
                 </div>
@@ -119,12 +121,13 @@ const ProductDetail = () => {
                       key={item.src}
                       className="rounded-2xl overflow-hidden shadow-lg bg-white border border-border hover:-translate-y-1 hover:border-primary transition-all duration-300"
                     >
-                      <div className="aspect-[4/5] overflow-hidden">
+                      <div className="h-72 md:h-80 overflow-hidden">
                         <img
                           src={item.src}
                           alt={item.caption}
                           loading="lazy"
                           decoding="async"
+                          style={{ objectPosition: "center" }}
                           className="w-full h-full object-cover"
                         />
                       </div>
