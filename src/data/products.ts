@@ -9,6 +9,11 @@ import switchSteps from "@/assets/switch-steps.png";
 import switchLivingRoom from "@/assets/switch-living-room.png";
 import switchFanLamp from "@/assets/switch-fan-lamp.png";
 import switchMobileApp from "@/assets/switch-mobile-app.png";
+import whiteSteps from "@/assets/white-steps.png";
+import whiteKitchen from "@/assets/white-kitchen.png";
+import whiteStudyRoom from "@/assets/white-study-room.png";
+import whiteBrightness from "@/assets/white-brightness.png";
+import whiteProduct from "@/assets/white-product.png";
 
 export const productMedia: Record<
   string,
@@ -28,6 +33,14 @@ export const productMedia: Record<
       { src: rgbAmbient, caption: "Ambient Lighting" },
       { src: rgbParty, caption: "Party Mode" },
       { src: rgbColorwheel, caption: "16 Million Colors at Your Fingertips" },
+    ],
+  },
+  "/product-led-white": {
+    stepsImage: whiteSteps,
+    gallery: [
+      { src: whiteKitchen, caption: "Kitchen Lighting" },
+      { src: whiteStudyRoom, caption: "Study Room" },
+      { src: whiteBrightness, caption: "Adjust Brightness with Ease" },
     ],
   },
 };
@@ -63,7 +76,7 @@ export const products = [
     name: "LED Controller – White Light",
     description:
       "Smart LED controller designed to control brightness and schedules for white LED lighting systems.",
-    image: productWhite,
+    image: whiteProduct,
     href: "/product-led-white",
     shortDescription:
       "Experience clean, focused lighting with the MOI LED Controller – White Light. Designed for productivity and comfort, it offers precise brightness control and scheduling for modern living spaces.",
