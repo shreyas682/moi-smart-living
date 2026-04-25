@@ -3,13 +3,13 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { getProductByHref } from "@/data/products";
-import demoImage from "@/assets/demo-how-it-works.png";
+import { Plug, Smartphone, Wifi, Mic } from "lucide-react";
 
 const realLifeSteps = [
-  "Connect device",
-  "Install mobile app",
-  "Pair with WiFi",
-  "Control via app or voice",
+  { label: "Connect device", Icon: Plug },
+  { label: "Install mobile app", Icon: Smartphone },
+  { label: "Pair with WiFi", Icon: Wifi },
+  { label: "Control via app or voice", Icon: Mic },
 ];
 
 const ProductDetail = () => {
@@ -106,24 +106,26 @@ const ProductDetail = () => {
               Experience seamless smart home control with MOI devices. From installation to daily use,
               everything is designed for simplicity, speed, and convenience.
             </p>
-            <div className="rounded-3xl overflow-hidden shadow-xl bg-white">
+            <div className="rounded-3xl overflow-hidden shadow-xl bg-white p-8 md:p-12 flex items-center justify-center">
               <img
-                src={demoImage}
-                alt="MOI smart home devices demo: Two-Node Smart Switch, RGB and White LED Controllers"
+                src={product.image}
+                alt={`${product.name} in use`}
                 loading="lazy"
-                className="w-full h-auto object-contain"
+                decoding="async"
+                className="w-full max-w-md h-auto object-contain"
               />
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
               {realLifeSteps.map((step, idx) => (
                 <div
-                  key={step}
+                  key={step.label}
                   className="bg-white border border-border rounded-xl p-5 text-center shadow-sm hover:border-primary hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary text-white text-sm font-bold mb-3">
-                    {idx + 1}
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white mb-3">
+                    <step.Icon size={18} />
                   </div>
-                  <p className="text-sm font-semibold text-foreground">{step}</p>
+                  <div className="text-xs font-bold text-primary mb-1">Step {idx + 1}</div>
+                  <p className="text-sm font-semibold text-foreground">{step.label}</p>
                 </div>
               ))}
             </div>
