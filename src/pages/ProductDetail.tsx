@@ -2,15 +2,7 @@ import { Navigate, useLocation, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { getProductByHref } from "@/data/products";
-import { Plug, Smartphone, Wifi, Mic } from "lucide-react";
-
-const realLifeSteps = [
-  { label: "Connect device", Icon: Plug },
-  { label: "Install mobile app", Icon: Smartphone },
-  { label: "Pair with WiFi", Icon: Wifi },
-  { label: "Control via app or voice", Icon: Mic },
-];
+import { getProductByHref, productMedia } from "@/data/products";
 
 const ProductDetail = () => {
   const { pathname } = useLocation();
@@ -19,6 +11,8 @@ const ProductDetail = () => {
   if (!product) {
     return <Navigate to="/" replace />;
   }
+
+  const media = productMedia[product.href];
 
   return (
     <div className="min-h-screen bg-background">
@@ -97,40 +91,53 @@ const ProductDetail = () => {
           </div>
         </section>
 
-        <section className="px-6 py-20 bg-soft-orange">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-foreground mb-4 text-center">
-              How It Works in <span className="text-primary">Real Life</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-center mb-12">
-              Experience seamless smart home control with MOI devices. From installation to daily use,
-              everything is designed for simplicity, speed, and convenience.
-            </p>
-            <div className="rounded-3xl overflow-hidden shadow-xl bg-white p-8 md:p-12 flex items-center justify-center">
-              <img
-                src={product.image}
-                alt={`${product.name} in use`}
-                loading="lazy"
-                decoding="async"
-                className="w-full max-w-md h-auto object-contain"
-              />
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-              {realLifeSteps.map((step, idx) => (
-                <div
-                  key={step.label}
-                  className="bg-white border border-border rounded-xl p-5 text-center shadow-sm hover:border-primary hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white mb-3">
-                    <step.Icon size={18} />
-                  </div>
-                  <div className="text-xs font-bold text-primary mb-1">Step {idx + 1}</div>
-                  <p className="text-sm font-semibold text-foreground">{step.label}</p>
+        {media && (
+          <section className="px-6 py-20 bg-soft-orange">
+            <div className="container mx-auto max-w-6xl space-y-16">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-foreground mb-8 text-center">
+                  How It <span className="text-primary">Works</span>
+                </h2>
+                <div className="rounded-3xl overflow-hidden shadow-xl bg-white p-6 md:p-10 flex items-center justify-center">
+                  <img
+                    src={media.stepsImage}
+                    alt={`${product.name} step-by-step guide`}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full max-w-2xl h-auto object-contain"
+                  />
                 </div>
-              ))}
+              </div>
+
+              <div>
+                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-foreground mb-8 text-center">
+                  See It <span className="text-primary">In Action</span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {media.gallery.map((item) => (
+                    <figure
+                      key={item.src}
+                      className="rounded-2xl overflow-hidden shadow-lg bg-white border border-border hover:-translate-y-1 hover:border-primary transition-all duration-300"
+                    >
+                      <div className="aspect-[4/5] overflow-hidden">
+                        <img
+                          src={item.src}
+                          alt={item.caption}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <figcaption className="px-4 py-3 text-sm font-semibold text-foreground text-center">
+                        {item.caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
       </main>
       <FooterSection />
       <WhatsAppButton />
