@@ -2,7 +2,8 @@ import { Navigate, useLocation, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { getProductByHref, productMedia } from "@/data/products";
+import { getProductByHref, isProductHeroImage, productMedia } from "@/data/products";
+import { cn } from "@/lib/utils";
 
 const ProductDetail = () => {
   const { pathname } = useLocation();
@@ -13,6 +14,7 @@ const ProductDetail = () => {
   }
 
   const media = productMedia[product.href];
+  const heroGraphic = isProductHeroImage(product.href);
 
   return (
     <div className="min-h-screen bg-background">
@@ -35,17 +37,35 @@ const ProductDetail = () => {
               </Link>
             </div>
 
-            <div className="group relative rounded-3xl overflow-hidden shadow-2xl bg-secondary">
+            <div
+              className={cn(
+                "group relative rounded-3xl overflow-hidden shadow-2xl",
+                heroGraphic
+                  ? "bg-zinc-950 ring-1 ring-white/[0.08] shadow-black/40"
+                  : "bg-secondary",
+              )}
+            >
               <img
                 src={product.image}
                 alt={product.name}
-                loading="lazy"
+                loading="eager"
                 decoding="async"
+                fetchPriority="high"
                 style={{ objectPosition: "center" }}
-                className="w-full h-[400px] md:h-[520px] object-contain transition-transform duration-300 ease-out group-hover:scale-105"
+                className={cn(
+                  "w-full object-contain transition-transform duration-300 ease-out",
+                  heroGraphic
+                    ? "h-[min(72vw,520px)] sm:h-[440px] md:h-[560px] py-6 md:py-10 px-3 sm:px-6 group-hover:scale-[1.02]"
+                    : "h-[400px] md:h-[520px] group-hover:scale-105",
+                )}
               />
-              <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
-              <div className="absolute inset-0 rounded-3xl ring-0 group-hover:ring-4 ring-primary/30 transition-all duration-300" />
+              <div
+                className={cn(
+                  "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out pointer-events-none",
+                  heroGraphic ? "bg-primary/[0.06]" : "bg-primary/10",
+                )}
+              />
+              <div className="absolute inset-0 rounded-3xl ring-0 group-hover:ring-4 ring-primary/30 transition-all duration-300 pointer-events-none" />
             </div>
           </div>
         </section>
@@ -105,6 +125,7 @@ const ProductDetail = () => {
                     alt={`${product.name} step-by-step guide`}
                     loading="lazy"
                     decoding="async"
+                    fetchPriority="low"
                     style={{ objectPosition: "center" }}
                     className="w-full max-w-2xl h-auto object-contain"
                   />
@@ -127,6 +148,7 @@ const ProductDetail = () => {
                           alt={item.caption}
                           loading="lazy"
                           decoding="async"
+                          fetchPriority="low"
                           style={{ objectPosition: "center" }}
                           className="w-full h-full object-cover"
                         />

@@ -29,7 +29,16 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
         <a href="/" className="flex items-center gap-3">
-          <img src={moiLogo} alt="MOI Technologies" className="h-9 w-auto" />
+          <img
+            src={moiLogo}
+            alt="MOI Technologies"
+            width={140}
+            height={36}
+            decoding="async"
+            fetchPriority="high"
+            loading="eager"
+            className="h-9 w-auto"
+          />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

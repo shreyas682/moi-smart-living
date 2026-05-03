@@ -7,6 +7,8 @@ const PartnerBannerSection = () => {
         <img
           src={partnerBg}
           alt="Business partnership handshake"
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-background/50" />

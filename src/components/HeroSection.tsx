@@ -43,6 +43,11 @@ const HeroSection = () => {
               <img
                 src={heroBg}
                 alt="Modern smart home with ambient lighting controlled via mobile app"
+                width={1200}
+                height={800}
+                decoding="async"
+                fetchPriority="high"
+                loading="eager"
                 className="w-full h-[420px] md:h-[560px] object-cover transition-transform duration-300 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 transition-opacity duration-300" />

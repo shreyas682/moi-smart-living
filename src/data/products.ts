@@ -1,6 +1,6 @@
-import productSwitch from "@/assets/product-smart-switch.jpg";
-import productWhite from "@/assets/product-led-white.jpg";
-import productRgb from "@/assets/product-led-rgb.jpg";
+import twoNodeSmartSwitchHero from "@/assets/two-node-smart-switch-hero.png";
+import ledControllerWhiteLightHero from "@/assets/led-controller-white-light-hero.png";
+import ledControllerRgbHero from "@/assets/led-controller-rgb-hero.png";
 import rgbSteps from "@/assets/rgb-steps.png";
 import rgbAmbient from "@/assets/rgb-ambient.png";
 import rgbParty from "@/assets/rgb-party.png";
@@ -13,7 +13,16 @@ import whiteSteps from "@/assets/white-steps.png";
 import whiteKitchen from "@/assets/white-kitchen.png";
 import whiteStudyRoom from "@/assets/white-study-room.png";
 import whiteBrightness from "@/assets/white-brightness.png";
-import whiteProduct from "@/assets/white-product.png";
+/** Full hero graphics (dark bg + marketing type); use contain + dark frame in UI. */
+export const PRODUCT_HERO_IMAGE_HREFS = [
+  "/product-smart-switch",
+  "/product-led-white",
+  "/product-led-rgb",
+] as const;
+
+export function isProductHeroImage(href: string): boolean {
+  return (PRODUCT_HERO_IMAGE_HREFS as readonly string[]).includes(href);
+}
 
 export const productMedia: Record<
   string,
@@ -50,7 +59,7 @@ export const products = [
     name: "Two-Node Smart Switch",
     description:
       "A wireless smart switch designed for seamless control of lights and appliances. Compatible with smart assistants and modern home automation systems.",
-    image: productSwitch,
+    image: twoNodeSmartSwitchHero,
     href: "/product-smart-switch",
     shortDescription:
       "Upgrade your home with the MOI Two-Node Smart Switch. Control lights and appliances wirelessly with smart assistants or your mobile device — no rewiring required.",
@@ -76,7 +85,7 @@ export const products = [
     name: "LED Controller – White Light",
     description:
       "Smart LED controller designed to control brightness and schedules for white LED lighting systems.",
-    image: whiteProduct,
+    image: ledControllerWhiteLightHero,
     href: "/product-led-white",
     shortDescription:
       "Experience clean, focused lighting with the MOI LED Controller – White Light. Designed for productivity and comfort, it offers precise brightness control and scheduling for modern living spaces.",
@@ -102,7 +111,7 @@ export const products = [
     name: "LED Controller – RGB",
     description:
       "Advanced RGB lighting controller that allows users to customize colors, scenes, and ambience through a mobile app or voice assistant.",
-    image: productRgb,
+    image: ledControllerRgbHero,
     href: "/product-led-rgb",
     shortDescription:
       "Transform your home with dynamic RGB lighting. The MOI LED Controller – RGB lets you control millions of colors, create custom scenes, and sync lighting with your mood, music, or daily routine — all from your smartphone or voice assistant.",

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { products } from "@/data/products";
+import { isProductHeroImage, products } from "@/data/products";
+import { cn } from "@/lib/utils";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -32,7 +33,9 @@ const ProductShowcase = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {products.map((p, i) => (
+          {products.map((p, i) => {
+            const isHeroGraphic = isProductHeroImage(p.href);
+            return (
             <motion.div
               key={p.name}
               custom={i}
@@ -42,13 +45,25 @@ const ProductShowcase = () => {
               viewport={{ once: true, margin: "-50px" }}
               className="group card-premium rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300"
             >
-              <div className="overflow-hidden h-64 bg-secondary">
+              <div
+                className={cn(
+                  "overflow-hidden h-64",
+                  isHeroGraphic
+                    ? "bg-zinc-950 flex items-center justify-center p-3 sm:p-4"
+                    : "bg-secondary",
+                )}
+              >
                 <img
                   src={p.image}
                   alt={p.name}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className={cn(
+                    "w-full h-full transition-transform duration-500 ease-out",
+                    isHeroGraphic
+                      ? "object-contain object-center max-h-full group-hover:scale-[1.03]"
+                      : "object-cover group-hover:scale-110",
+                  )}
                 />
               </div>
               <div className="p-7">
@@ -62,7 +77,8 @@ const ProductShowcase = () => {
                 </Link>
               </div>
             </motion.div>
-          ))}
+          );
+          })}
         </div>
       </div>
     </section>
