@@ -53,9 +53,9 @@ const Navbar = () => {
           ))}
           <Link
             to="/contact"
-            className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight transition-transform duration-300 hover:scale-105"
+            className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight transition-transform duration-300 hover:scale-105 animate-pulse-glow"
           >
-            Contact Us
+            Get Demo
           </Link>
         </div>
 
@@ -85,7 +85,7 @@ const Navbar = () => {
               className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold text-center"
               onClick={() => setMobileOpen(false)}
             >
-              Contact Us
+              Get Demo
             </Link>
           </div>
         </div>
