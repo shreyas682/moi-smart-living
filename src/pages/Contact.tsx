@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import ContactSection from "@/components/ContactSection";
+import PremiumContactSection from "@/components/PremiumContactSection";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -8,7 +8,7 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-20">
-        <ContactSection />
+        <PremiumContactSection />
       </main>
       <FooterSection />
       <WhatsAppButton />
