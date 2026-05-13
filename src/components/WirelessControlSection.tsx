@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { CableOff, Cpu, Smartphone } from "lucide-react";
+import { Cable, Cpu, Smartphone } from "lucide-react";
 
 const items = [
   {
-    icon: CableOff,
+    icon: Cable,
     title: "No Extra Wiring",
     description:
       "Install lighting and switches without rewiring or adding control panels.",
