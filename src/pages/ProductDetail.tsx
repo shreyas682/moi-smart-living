@@ -119,7 +119,7 @@ const ProductDetail = () => {
                 <h2 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-foreground mb-8 text-center">
                   How It <span className="text-primary">Works</span>
                 </h2>
-                <div className="rounded-3xl overflow-hidden shadow-xl bg-card border border-border p-6 md:p-10 flex items-center justify-center">
+                <div className="rounded-3xl overflow-hidden shadow-xl bg-white p-6 md:p-10 flex items-center justify-center">
                   <img
                     src={media.stepsImage}
                     alt={`${product.name} step-by-step guide`}
@@ -140,7 +140,7 @@ const ProductDetail = () => {
                   {media.gallery.map((item) => (
                     <figure
                       key={item.src}
-                      className="rounded-2xl overflow-hidden shadow-lg bg-card border border-border hover:-translate-y-1 hover:border-primary transition-all duration-300"
+                      className="rounded-2xl overflow-hidden shadow-lg bg-white border border-border hover:-translate-y-1 hover:border-primary transition-all duration-300"
                     >
                       <div className="h-72 md:h-80 overflow-hidden">
                         <img
