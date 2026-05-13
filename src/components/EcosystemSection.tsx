@@ -63,7 +63,7 @@ const EcosystemSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, delay: 0.15 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }}
             className="rounded-2xl overflow-hidden border border-border shadow-sm"
           >
