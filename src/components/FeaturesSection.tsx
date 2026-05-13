@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Cpu, Wifi, Home } from "lucide-react";
+import { Cpu, Wifi, Leaf, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 
 const features = [
@@ -14,9 +14,14 @@ const features = [
     description: "Easy installation without rewiring homes.",
   },
   {
-    icon: Home,
-    title: "Modern Smart Living",
-    description: "Designed for future-ready automated homes.",
+    icon: Leaf,
+    title: "Energy Efficient",
+    description: "Optimized power use with smart scheduling and sensors.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Secure & Reliable",
+    description: "Encrypted communication and enterprise-grade reliability.",
   },
 ];
 
@@ -78,7 +83,7 @@ const FeaturesSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((f, i) => (
             <FeatureCard key={f.title} feature={f} index={i} />
           ))}
