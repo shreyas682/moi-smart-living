@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import moiLogo from "@/assets/moi-logo.svg";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -28,18 +27,11 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
-        <a href="/" className="flex items-center gap-3">
-          <img
-            src={moiLogo}
-            alt="MOI Technologies"
-            width={140}
-            height={36}
-            decoding="async"
-            fetchPriority="high"
-            loading="eager"
-            className="h-9 w-auto"
-          />
-        </a>
+        <Link to="/" className="group flex items-center" aria-label="MOI Technologies home">
+          <span className="text-lg md:text-xl font-bold tracking-tight text-white transition-all duration-300 group-hover:[text-shadow:0_0_18px_hsl(26_100%_50%/0.55)]">
+            MOI <span className="text-primary">Technologies</span>
+          </span>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
@@ -55,7 +47,7 @@ const Navbar = () => {
             to="/contact"
             className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight transition-transform duration-300 hover:scale-105"
           >
-            Contact Us
+            Book Demo
           </Link>
         </div>
 
@@ -85,7 +77,7 @@ const Navbar = () => {
               className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold text-center"
               onClick={() => setMobileOpen(false)}
             >
-              Contact Us
+              Book Demo
             </Link>
           </div>
         </div>

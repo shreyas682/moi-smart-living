@@ -62,7 +62,7 @@ const ContactSection = () => {
                 <Textarea id="message" placeholder="Tell us about your requirements..." rows={4} required className="bg-secondary border-0" />
               </div>
               <Button type="submit" className="w-full btn-primary-cyan border-0 h-12 text-base font-bold" size="lg">
-                Submit
+                Book Demo
               </Button>
             </form>
           )}

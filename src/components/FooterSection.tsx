@@ -14,7 +14,7 @@ const FooterSection = () => {
     <footer className="footer-dark py-16 px-6">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         <div>
-          <h3 className="text-lg font-bold tracking-tighter text-white mb-3">
+          <h3 className="text-lg font-bold tracking-tight text-white mb-3 [text-shadow:0_0_18px_hsl(26_100%_50%/0.4)]">
             MOI <span className="text-primary">Technologies</span>
           </h3>
           <p className="text-sm text-white/70 leading-relaxed">
