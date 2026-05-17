@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import FeaturesSection from "@/components/FeaturesSection";
+import SolutionsShowcase from "@/components/SolutionsShowcase";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Home as HomeIcon, Zap, ShieldCheck } from "lucide-react";
@@ -53,6 +54,7 @@ const Solutions = () => {
             </div>
           </div>
         </section>
+        <SolutionsShowcase />
         <FeaturesSection />
       </main>
       <FooterSection />
