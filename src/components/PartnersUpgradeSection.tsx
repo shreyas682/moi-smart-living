@@ -50,10 +50,10 @@ const PartnersUpgradeSection = () => {
               Partner Program
             </span>
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-white mb-6 [text-shadow:0_0_40px_hsl(26_100%_50%/0.25)]">
-              Build the future of <span className="text-primary">smart automation</span> with us
+              Grow your practice with <span className="text-primary">smart lighting</span>
             </h1>
             <p className="text-lg text-white/70 max-w-2xl mx-auto mb-10">
-              Join an enterprise ecosystem of architects, integrators and brands deploying premium IoT across homes, cafes, hotels and offices.
+              Partner with MOI Technologies and offer your clients premium wireless lighting — installed without rewiring.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -70,29 +70,6 @@ const PartnersUpgradeSection = () => {
               </Link>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Metrics */}
-      <section className="py-20 px-6 bg-secondary/40">
-        <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-          {metrics.map((m, i) => (
-            <motion.div
-              key={m.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-white border border-border rounded-2xl p-8 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="text-4xl md:text-5xl font-extrabold tracking-tighter text-gradient-cyan mb-2">
-                <Counter to={m.value} suffix={m.suffix} />
-              </div>
-              <div className="text-xs md:text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                {m.label}
-              </div>
-            </motion.div>
-          ))}
         </div>
       </section>
 
