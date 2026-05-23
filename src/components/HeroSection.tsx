@@ -1,63 +1,73 @@
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
+import { Link } from "react-router-dom";
+import switchHero from "@/assets/two-node-smart-switch-hero.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background pt-24 pb-16 lg:pt-0 lg:pb-0">
-      {/* Ambient glow */}
-      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[150px] pointer-events-none" />
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16 lg:pt-0 lg:pb-0 bg-[hsl(0_0%_7%)] text-white">
+      {/* Warm amber lighting glow */}
+      <div className="absolute top-1/3 right-1/3 w-[700px] h-[700px] rounded-full bg-[hsl(28_100%_55%/0.22)] blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-[hsl(38_100%_60%/0.12)] blur-[140px] pointer-events-none" />
+      {/* Subtle grid */}
+      <div
+        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(hsl(0 0% 100% / 1) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100% / 1) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
 
       <div className="relative z-10 container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Text */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-left"
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-foreground mb-6 leading-[0.95]">
-              Smart Living.
+            <span className="inline-block text-xs font-semibold tracking-[0.25em] text-primary uppercase mb-6">
+              MOI Technologies
+            </span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter mb-6 leading-[0.95]">
+              Lighting That
               <br />
-              <span className="text-gradient-cyan">Simplified.</span>
+              <span className="text-gradient-cyan">Thinks.</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-lg leading-relaxed font-medium">
-              Advanced smart home solutions by MOI Technologies.
+            <p className="text-lg md:text-xl text-white/70 mb-10 max-w-xl leading-relaxed font-medium">
+              Wireless smart lighting for homes, cafes, boutiques and offices — installed in hours, controlled from one app.
             </p>
-            <a
-              href="#products"
-              className="inline-block px-10 py-4 rounded-lg btn-primary-cyan text-base font-bold tracking-tight transition-transform hover:scale-105"
-            >
-              Explore Products
-            </a>
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                to="/contact"
+                className="inline-block px-10 py-4 rounded-lg btn-primary-cyan text-base font-bold tracking-tight transition-transform hover:scale-105"
+              >
+                Book a Demo
+              </Link>
+              <Link
+                to="/products"
+                className="inline-block px-10 py-4 rounded-lg border border-white/20 text-white text-base font-semibold tracking-tight hover:bg-white/10 transition-colors"
+              >
+                See Products
+              </Link>
+            </div>
           </motion.div>
 
-          {/* Right: Hero image */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="relative"
           >
-            <div className="group relative rounded-3xl overflow-hidden shadow-2xl cursor-pointer">
+            <div className="absolute -inset-8 bg-[hsl(28_100%_55%/0.18)] blur-3xl rounded-full pointer-events-none" />
+            <div className="relative aspect-square rounded-3xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-[hsl(0_0%_10%)] to-[hsl(0_0%_5%)] border border-white/5 shadow-[0_30px_80px_-20px_hsl(28_100%_50%/0.35)]">
               <img
-                src={heroBg}
-                alt="Modern smart home with ambient lighting controlled via mobile app"
-                width={1200}
-                height={800}
+                src={switchHero}
+                alt="MOI Two-Node Smart Switch"
                 decoding="async"
                 fetchPriority="high"
-                loading="eager"
-                className="w-full h-[420px] md:h-[560px] object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                className="relative w-full h-full object-contain p-10"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 transition-opacity duration-300" />
-              {/* Orange overlay on hover */}
-              <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
-              {/* Orange glow ring on hover */}
-              <div className="absolute inset-0 rounded-3xl ring-0 group-hover:ring-4 ring-primary/40 transition-all duration-300" />
             </div>
-            {/* Soft glow behind image */}
-            <div className="absolute -inset-4 -z-10 bg-primary/10 blur-3xl rounded-full" />
           </motion.div>
         </div>
       </div>
