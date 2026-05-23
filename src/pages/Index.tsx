@@ -1,13 +1,13 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import WirelessControlSection from "@/components/WirelessControlSection";
-import EcosystemSection from "@/components/EcosystemSection";
 import ProductShowcase from "@/components/ProductShowcase";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import MoiSpaceSection from "@/components/MoiSpaceSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import PartnersSection from "@/components/PartnersSection";
 import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -16,12 +16,12 @@ const Index = () => {
       <HeroSection />
       <WirelessControlSection />
       <ProductShowcase />
-      <EcosystemSection />
+      <HowItWorksSection />
+      <MoiSpaceSection />
       <FeaturesSection />
       <PartnersSection />
       <ContactSection />
       <FooterSection />
-      <WhatsAppButton />
     </div>
   );
 };

@@ -58,6 +58,37 @@ const ContactSection = () => {
                 <Input id="company" placeholder="Company name" className="bg-secondary border-0" />
               </div>
               <div className="space-y-2">
+                <Label htmlFor="projectType" className="text-sm font-medium">Type of Project</Label>
+                <select
+                  id="projectType"
+                  required
+                  defaultValue=""
+                  className="w-full h-10 rounded-md bg-secondary border-0 px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  <option value="" disabled>Select a project type</option>
+                  <option value="residential">Residential</option>
+                  <option value="cafe">Cafe</option>
+                  <option value="retail">Retail</option>
+                  <option value="office">Office</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="projectSize" className="text-sm font-medium">Approximate project size</Label>
+                <select
+                  id="projectSize"
+                  required
+                  defaultValue=""
+                  className="w-full h-10 rounded-md bg-secondary border-0 px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  <option value="" disabled>Select project size</option>
+                  <option value="1-room">1 room</option>
+                  <option value="2-5-rooms">2–5 rooms</option>
+                  <option value="full-floor">Full floor</option>
+                  <option value="multi-location">Multiple locations</option>
+                </select>
+              </div>
+              <div className="space-y-2">
                 <Label htmlFor="message" className="text-sm font-medium">Message</Label>
                 <Textarea id="message" placeholder="Tell us about your requirements..." rows={4} required className="bg-secondary border-0" />
               </div>

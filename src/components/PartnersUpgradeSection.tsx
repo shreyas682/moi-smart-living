@@ -128,10 +128,10 @@ const PartnersUpgradeSection = () => {
               Why Partner With MOI
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
-              Built for sustainable growth
+              Partner benefits, built for design practices
             </h2>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((b, i) => (
               <motion.div
                 key={b.title}

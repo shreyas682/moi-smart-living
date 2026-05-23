@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import FeaturesSection from "@/components/FeaturesSection";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
 import FooterSection from "@/components/FooterSection";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import { Home as HomeIcon, Coffee, Store, Building2 } from "lucide-react";
 
 const solutionItems = [
@@ -63,7 +62,6 @@ const Solutions = () => {
         <FeaturesSection />
       </main>
       <FooterSection />
-      <WhatsAppButton />
     </div>
   );
 };
