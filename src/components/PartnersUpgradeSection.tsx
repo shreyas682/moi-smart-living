@@ -1,69 +1,29 @@
-import { motion, useInView, animate } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   Building2,
-  Hammer,
-  Coffee,
-  Hotel,
   Palette,
-  Wrench,
-  Network,
-  TrendingUp,
-  Headphones,
+  Hammer,
+  Store,
+  Tag,
+  FileText,
+  LifeBuoy,
   GraduationCap,
-  Rocket,
-  LayoutDashboard,
-  Boxes,
 } from "lucide-react";
 
 const partnerTypes = [
-  { icon: Building2, title: "Architects", desc: "Specify smart automation in your blueprints." },
-  { icon: Hammer, title: "Builders", desc: "Differentiate every project with premium IoT." },
-  { icon: Coffee, title: "Cafes", desc: "Deliver signature ambience, automated." },
-  { icon: Hotel, title: "Hotels", desc: "Premium guest experiences at scale." },
-  { icon: Palette, title: "Interior Designers", desc: "Lighting scenes that elevate any space." },
-  { icon: Wrench, title: "Smart Installers", desc: "Certified deployment partner program." },
-  { icon: Network, title: "Enterprise Integrators", desc: "Centralized control for portfolios." },
-  { icon: Boxes, title: "Distributors", desc: "Premium product line for your channel." },
+  { icon: Palette, title: "Interior Designers", desc: "Elevate every project with design-grade lighting." },
+  { icon: Building2, title: "Architects", desc: "Specify wireless smart lighting in your drawings." },
+  { icon: Hammer, title: "Renovation Firms", desc: "Add premium lighting to every renovation, without rewiring." },
+  { icon: Store, title: "Boutique Retailers", desc: "Differentiate your spaces with scene-driven lighting." },
 ];
 
 const benefits = [
-  { icon: TrendingUp, title: "Recurring Revenue", desc: "Earn long-term margins from every deployment and renewal." },
-  { icon: Headphones, title: "Technical Support", desc: "Dedicated engineers — pre-sale, install and post-launch." },
-  { icon: GraduationCap, title: "Training Programs", desc: "Certifications and playbooks for your team." },
-  { icon: Rocket, title: "Deployment Assistance", desc: "On-ground help for complex enterprise rollouts." },
-  { icon: Boxes, title: "Scalable Growth", desc: "From single rooms to multi-site IoT portfolios." },
-  { icon: LayoutDashboard, title: "Central Management", desc: "Manage every site from one premium dashboard." },
+  { icon: Tag, title: "Dealer Pricing", desc: "Partner-only pricing across the full MOI lighting catalogue." },
+  { icon: FileText, title: "Co-Branded Proposals", desc: "Polished proposal templates to win more lighting briefs." },
+  { icon: LifeBuoy, title: "Project Support", desc: "Specification, installation and on-site help from our team." },
+  { icon: GraduationCap, title: "Training", desc: "Onboarding sessions on Moi Space, hardware and scene design." },
 ];
-
-const metrics = [
-  { value: 250, suffix: "+", label: "Active Partners" },
-  { value: 40, suffix: "+", label: "Cities Covered" },
-  { value: 12000, suffix: "+", label: "Automation Deployments" },
-  { value: 1500, suffix: "+", label: "Projects Completed" },
-];
-
-const Counter = ({ to, suffix }: { to: number; suffix: string }) => {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
-  const [val, setVal] = useState(0);
-  useEffect(() => {
-    if (!inView) return;
-    const controls = animate(0, to, {
-      duration: 1.8,
-      ease: "easeOut",
-      onUpdate: (v) => setVal(Math.floor(v)),
-    });
-    return () => controls.stop();
-  }, [inView, to]);
-  return (
-    <span ref={ref}>
-      {val.toLocaleString()}
-      {suffix}
-    </span>
-  );
-};
 
 const PartnersUpgradeSection = () => {
   return (
