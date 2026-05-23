@@ -77,9 +77,9 @@ const ProductShowcase = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed mb-5">
                     {p.description}
                   </p>
-                  {"specs" in p && Array.isArray((p as { specs?: string[] }).specs) && (
+                  {"specs" in p && Array.isArray((p as { specs?: readonly string[] }).specs) && (
                     <ul className="space-y-2 mb-6">
-                      {(p as { specs: string[] }).specs.map((s) => (
+                      {(p as { specs: readonly string[] }).specs.map((s) => (
                         <li key={s} className="flex items-start gap-2 text-xs text-foreground/80">
                           <Check size={14} className="mt-0.5 text-primary shrink-0" />
                           <span>{s}</span>

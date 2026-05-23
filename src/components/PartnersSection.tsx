@@ -22,10 +22,10 @@ const PartnersSection = () => {
           className="flex flex-col items-center justify-center text-center mx-auto max-w-3xl"
         >
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-white mb-6 text-center w-full">
-            Partner With <span className="text-gradient-cyan">MOI Technologies</span>
+            For Interior Designers, Architects & <span className="text-gradient-cyan">Renovation Firms</span>
           </h2>
           <p className="text-lg text-white/70 mb-10 leading-relaxed text-center max-w-2xl">
-            We collaborate with developers, architects, and system integrators to build the next generation of smart homes.
+            Partner with MOI Technologies and offer your clients premium wireless lighting — installed without rewiring.
           </p>
           <Link
             to="/contact"
