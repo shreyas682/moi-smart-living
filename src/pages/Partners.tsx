@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import PartnersUpgradeSection from "@/components/PartnersUpgradeSection";
 import FooterSection from "@/components/FooterSection";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Partners = () => {
   return (
@@ -11,7 +10,6 @@ const Partners = () => {
         <PartnersUpgradeSection />
       </main>
       <FooterSection />
-      <WhatsAppButton />
     </div>
   );
 };

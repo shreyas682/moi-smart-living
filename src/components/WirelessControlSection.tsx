@@ -1,24 +1,24 @@
 import { motion } from "framer-motion";
-import { Cable, Cpu, Smartphone } from "lucide-react";
+import { Cable, Lightbulb, Smartphone } from "lucide-react";
 
 const items = [
   {
     icon: Cable,
-    title: "No Extra Wiring",
+    title: "No Rewiring",
     description:
-      "Install lighting and switches without rewiring or adding control panels.",
+      "Retrofit smart lighting into any space without tearing down walls or wiring.",
   },
   {
-    icon: Cpu,
-    title: "Smart Automation",
+    icon: Lightbulb,
+    title: "Scenes & Schedules",
     description:
-      "Schedules, scenes, and sensors keep your space adaptive and intelligent.",
+      "Design lighting moods for every hour, room and occasion — automated.",
   },
   {
     icon: Smartphone,
-    title: "App & Voice Control",
+    title: "One Lighting App",
     description:
-      "Control everything from your phone or with Alexa, Google, and Siri.",
+      "Control every fixture, zone and scene from Moi Space — our purpose-built app.",
   },
 ];
 
@@ -33,15 +33,14 @@ const WirelessControlSection = () => {
           transition={{ duration: 0.6 }}
         >
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-5">
-            Wireless Smart Control
+            Design-Grade Smart Lighting
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter text-foreground leading-[1.05] mb-6">
-            Wireless Smart Control for{" "}
-            <span className="text-gradient-cyan">Modern Spaces</span>
+            Wireless lighting for{" "}
+            <span className="text-gradient-cyan">modern spaces</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-            Control lighting, switches, sensors, and automation devices without
-            complex wiring or expensive control systems.
+            Control fixtures, strips and switches across your space — without rewiring, control panels or DIY complexity.
           </p>
         </motion.div>
 

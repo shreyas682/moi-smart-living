@@ -58,7 +58,12 @@ export const products = [
   {
     name: "Two-Node Smart Switch",
     description:
-      "A wireless smart switch designed for seamless control of lights and appliances. Compatible with smart assistants and modern home automation systems.",
+      "Wireless 2-node smart switch for retrofit lighting control — no rewiring required.",
+    specs: [
+      "Dual-load (2 nodes)",
+      "Wireless retrofit",
+      "Moi Space app",
+    ],
     image: twoNodeSmartSwitchHero,
     href: "/product-smart-switch",
     shortDescription:
@@ -84,7 +89,12 @@ export const products = [
   {
     name: "LED Controller – White Light",
     description:
-      "Smart LED controller designed to control brightness and schedules for white LED lighting systems.",
+      "CCT controller for tunable white LED strips. Precise dimming, scenes and scheduling.",
+    specs: [
+      "Tunable white (CCT)",
+      "Flicker-free dimming",
+      "Scenes & schedules",
+    ],
     image: ledControllerWhiteLightHero,
     href: "/product-led-white",
     shortDescription:
@@ -110,7 +120,12 @@ export const products = [
   {
     name: "LED Controller – RGB",
     description:
-      "Advanced RGB lighting controller that allows users to customize colors, scenes, and ambience through a mobile app or voice assistant.",
+      "RGB strip controller for design-led ambience — millions of colors, smooth scenes.",
+    specs: [
+      "16M color RGB",
+      "Scene & schedule engine",
+      "Moi Space app",
+    ],
     image: ledControllerRgbHero,
     href: "/product-led-rgb",
     shortDescription:

@@ -2,24 +2,28 @@ import Navbar from "@/components/Navbar";
 import FeaturesSection from "@/components/FeaturesSection";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
 import FooterSection from "@/components/FooterSection";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import { Home as HomeIcon, Zap, ShieldCheck } from "lucide-react";
+import { Home as HomeIcon, Coffee, Store, Building2 } from "lucide-react";
 
 const solutionItems = [
   {
     icon: HomeIcon,
-    title: "Home Automation",
-    description: "Control lights, switches, and devices from one app or your voice.",
+    title: "Smart Homes",
+    description: "Lighting scenes that match your mood, from one app.",
   },
   {
-    icon: Zap,
-    title: "Energy Efficiency",
-    description: "Smart scheduling and monitoring to reduce power consumption.",
+    icon: Coffee,
+    title: "Cafes & Restaurants",
+    description: "Ambience that changes with your service hours.",
   },
   {
-    icon: ShieldCheck,
-    title: "Smart Security",
-    description: "Stay aware and in control of your home, anytime, anywhere.",
+    icon: Store,
+    title: "Boutiques & Retail",
+    description: "Accent and window lighting — controlled like a campaign.",
+  },
+  {
+    icon: Building2,
+    title: "Offices",
+    description: "Productive spaces, retrofitted with zero rewiring.",
   },
 ];
 
@@ -31,12 +35,12 @@ const Solutions = () => {
         <section className="py-20 px-6 bg-soft-orange">
           <div className="container mx-auto text-center">
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
-              Smart home solutions for <span className="text-primary">modern living</span>
+              Lighting use cases for <span className="text-primary">modern spaces</span>
             </h1>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Premium, simple, and reliable systems built for everyday life.
+              Designed for homes, cafes, boutiques and offices — installed in hours.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
               {solutionItems.map((item) => (
                 <div
                   key={item.title}
@@ -58,7 +62,6 @@ const Solutions = () => {
         <FeaturesSection />
       </main>
       <FooterSection />
-      <WhatsAppButton />
     </div>
   );
 };

@@ -1,9 +1,8 @@
 import Navbar from "@/components/Navbar";
 import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import { motion } from "framer-motion";
-import { Mail, Phone, MessageSquare, Clock, Sparkles, Cpu } from "lucide-react";
+import { Mail, Phone, Clock, Lightbulb } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -23,10 +22,10 @@ const Contact = () => {
                 Get In Touch
               </span>
               <h1 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-5">
-                Let's automate your <span className="text-gradient-cyan">space</span>
+                Let's design your <span className="text-gradient-cyan">lighting</span>
               </h1>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-10 max-w-lg">
-                Talk to our smart automation experts. We'll help you design the perfect IoT ecosystem for your home, cafe, hotel or office.
+                Talk to our lighting team. We'll help you plan scenes, zones and a clean install for your home, cafe, boutique or office.
               </p>
 
               {/* Visual */}
@@ -40,18 +39,11 @@ const Contact = () => {
                     transform: "perspective(700px) rotateX(50deg) translateY(20%) scale(1.4)",
                   }}
                 />
-                <div className="absolute top-6 left-6 px-3 py-2 rounded-lg bg-white/90 backdrop-blur border border-border shadow-md flex items-center gap-2 text-xs font-medium">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                  Avg response · 2 hrs
-                </div>
-                <div className="absolute bottom-6 right-6 px-3 py-2 rounded-lg bg-white/90 backdrop-blur border border-border shadow-md flex items-center gap-2 text-xs font-medium">
-                  <Sparkles size={14} className="text-primary" /> Custom IoT plan
-                </div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative">
                     <div className="absolute inset-0 rounded-2xl bg-primary/30 blur-2xl" />
                     <div className="relative w-24 h-24 rounded-2xl bg-white border border-border shadow-xl flex items-center justify-center text-primary">
-                      <Cpu size={44} strokeWidth={1.5} />
+                      <Lightbulb size={44} strokeWidth={1.5} />
                     </div>
                   </div>
                 </div>
@@ -97,7 +89,6 @@ const Contact = () => {
         </section>
       </main>
       <FooterSection />
-      <WhatsAppButton />
     </div>
   );
 };

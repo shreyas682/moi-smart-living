@@ -1,69 +1,29 @@
-import { motion, useInView, animate } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   Building2,
-  Hammer,
-  Coffee,
-  Hotel,
   Palette,
-  Wrench,
-  Network,
-  TrendingUp,
-  Headphones,
+  Hammer,
+  Store,
+  Tag,
+  FileText,
+  LifeBuoy,
   GraduationCap,
-  Rocket,
-  LayoutDashboard,
-  Boxes,
 } from "lucide-react";
 
 const partnerTypes = [
-  { icon: Building2, title: "Architects", desc: "Specify smart automation in your blueprints." },
-  { icon: Hammer, title: "Builders", desc: "Differentiate every project with premium IoT." },
-  { icon: Coffee, title: "Cafes", desc: "Deliver signature ambience, automated." },
-  { icon: Hotel, title: "Hotels", desc: "Premium guest experiences at scale." },
-  { icon: Palette, title: "Interior Designers", desc: "Lighting scenes that elevate any space." },
-  { icon: Wrench, title: "Smart Installers", desc: "Certified deployment partner program." },
-  { icon: Network, title: "Enterprise Integrators", desc: "Centralized control for portfolios." },
-  { icon: Boxes, title: "Distributors", desc: "Premium product line for your channel." },
+  { icon: Palette, title: "Interior Designers", desc: "Elevate every project with design-grade lighting." },
+  { icon: Building2, title: "Architects", desc: "Specify wireless smart lighting in your drawings." },
+  { icon: Hammer, title: "Renovation Firms", desc: "Add premium lighting to every renovation, without rewiring." },
+  { icon: Store, title: "Boutique Retailers", desc: "Differentiate your spaces with scene-driven lighting." },
 ];
 
 const benefits = [
-  { icon: TrendingUp, title: "Recurring Revenue", desc: "Earn long-term margins from every deployment and renewal." },
-  { icon: Headphones, title: "Technical Support", desc: "Dedicated engineers — pre-sale, install and post-launch." },
-  { icon: GraduationCap, title: "Training Programs", desc: "Certifications and playbooks for your team." },
-  { icon: Rocket, title: "Deployment Assistance", desc: "On-ground help for complex enterprise rollouts." },
-  { icon: Boxes, title: "Scalable Growth", desc: "From single rooms to multi-site IoT portfolios." },
-  { icon: LayoutDashboard, title: "Central Management", desc: "Manage every site from one premium dashboard." },
+  { icon: Tag, title: "Dealer Pricing", desc: "Partner-only pricing across the full MOI lighting catalogue." },
+  { icon: FileText, title: "Co-Branded Proposals", desc: "Polished proposal templates to win more lighting briefs." },
+  { icon: LifeBuoy, title: "Project Support", desc: "Specification, installation and on-site help from our team." },
+  { icon: GraduationCap, title: "Training", desc: "Onboarding sessions on Moi Space, hardware and scene design." },
 ];
-
-const metrics = [
-  { value: 250, suffix: "+", label: "Active Partners" },
-  { value: 40, suffix: "+", label: "Cities Covered" },
-  { value: 12000, suffix: "+", label: "Automation Deployments" },
-  { value: 1500, suffix: "+", label: "Projects Completed" },
-];
-
-const Counter = ({ to, suffix }: { to: number; suffix: string }) => {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
-  const [val, setVal] = useState(0);
-  useEffect(() => {
-    if (!inView) return;
-    const controls = animate(0, to, {
-      duration: 1.8,
-      ease: "easeOut",
-      onUpdate: (v) => setVal(Math.floor(v)),
-    });
-    return () => controls.stop();
-  }, [inView, to]);
-  return (
-    <span ref={ref}>
-      {val.toLocaleString()}
-      {suffix}
-    </span>
-  );
-};
 
 const PartnersUpgradeSection = () => {
   return (
@@ -90,10 +50,10 @@ const PartnersUpgradeSection = () => {
               Partner Program
             </span>
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-white mb-6 [text-shadow:0_0_40px_hsl(26_100%_50%/0.25)]">
-              Build the future of <span className="text-primary">smart automation</span> with us
+              Grow your practice with <span className="text-primary">smart lighting</span>
             </h1>
             <p className="text-lg text-white/70 max-w-2xl mx-auto mb-10">
-              Join an enterprise ecosystem of architects, integrators and brands deploying premium IoT across homes, cafes, hotels and offices.
+              Partner with MOI Technologies and offer your clients premium wireless lighting — installed without rewiring.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -110,29 +70,6 @@ const PartnersUpgradeSection = () => {
               </Link>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Metrics */}
-      <section className="py-20 px-6 bg-secondary/40">
-        <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-          {metrics.map((m, i) => (
-            <motion.div
-              key={m.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-white border border-border rounded-2xl p-8 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="text-4xl md:text-5xl font-extrabold tracking-tighter text-gradient-cyan mb-2">
-                <Counter to={m.value} suffix={m.suffix} />
-              </div>
-              <div className="text-xs md:text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                {m.label}
-              </div>
-            </motion.div>
-          ))}
         </div>
       </section>
 
@@ -191,10 +128,10 @@ const PartnersUpgradeSection = () => {
               Why Partner With MOI
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
-              Built for sustainable growth
+              Partner benefits, built for design practices
             </h2>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((b, i) => (
               <motion.div
                 key={b.title}

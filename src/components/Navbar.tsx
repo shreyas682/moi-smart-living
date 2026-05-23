@@ -5,7 +5,8 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Products", href: "/products" },
-  { name: "Solutions", href: "/solutions" },
+  { name: "Use Cases", href: "/solutions" },
+  { name: "App", href: "/#moi-space", external: true },
   { name: "Partners", href: "/partners" },
   { name: "Contact", href: "/contact" },
 ];
@@ -23,7 +24,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav-dark ${
-        scrolled ? "shadow-lg" : ""
+        scrolled ? "nav-dark-scrolled shadow-lg" : ""
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
@@ -34,15 +35,25 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              className="relative text-white hover:text-primary transition-colors duration-300 text-sm font-medium tracking-tight after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.external ? (
+              <a
+                key={link.name}
+                href={link.href}
+                className="relative text-white hover:text-primary transition-colors duration-300 text-sm font-medium tracking-tight after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.href}
+                className="relative text-white hover:text-primary transition-colors duration-300 text-sm font-medium tracking-tight after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+              >
+                {link.name}
+              </Link>
+            )
+          )}
           <Link
             to="/contact"
             className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight transition-transform duration-300 hover:scale-105"
@@ -62,16 +73,27 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="md:hidden nav-dark animate-fade-in">
           <div className="flex flex-col px-6 py-6 gap-5">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                className="text-sm text-white hover:text-primary font-medium transition-colors duration-300"
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-sm text-white hover:text-primary font-medium transition-colors duration-300"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="text-sm text-white hover:text-primary font-medium transition-colors duration-300"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
             <Link
               to="/contact"
               className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold text-center"

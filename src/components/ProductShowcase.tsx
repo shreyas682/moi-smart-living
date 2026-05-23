@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Check } from "lucide-react";
 import { isProductHeroImage, products } from "@/data/products";
 import { cn } from "@/lib/utils";
 
@@ -25,10 +26,10 @@ const ProductShowcase = () => {
           className="text-center mb-20"
         >
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
-            Our Smart Home <span className="text-gradient-cyan">Products</span>
+            Lighting <span className="text-gradient-cyan">Products</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Premium smart-home devices built for the future.
+            Purpose-built hardware for design-grade smart lighting.
           </p>
         </motion.div>
 
@@ -43,42 +44,57 @@ const ProductShowcase = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="group card-premium rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300"
+                className="group card-premium rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 flex flex-col"
               >
                 <div
                   className={cn(
                     "overflow-hidden h-64",
                     isHeroGraphic
-                      ? "bg-zinc-950 flex items-center justify-center p-3 sm:p-4"
+                      ? "bg-[hsl(0_0%_7%)] flex items-center justify-center p-6 relative"
                       : "bg-secondary",
                   )}
                 >
+                  {isHeroGraphic && (
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(28_100%_55%/0.18),transparent_60%)] pointer-events-none" />
+                  )}
                   <img
                     src={p.image}
                     alt={p.name}
                     loading="lazy"
                     decoding="async"
                     className={cn(
-                      "w-full h-full transition-transform duration-500 ease-out",
+                      "relative w-full h-full transition-transform duration-500 ease-out",
                       isHeroGraphic
                         ? "object-contain object-center max-h-full group-hover:scale-[1.03]"
                         : "object-cover group-hover:scale-110",
                     )}
                   />
                 </div>
-                <div className="p-7">
-                  <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">
+                <div className="p-7 flex flex-col flex-1">
+                  <h3 className="text-lg font-bold tracking-tight text-foreground mb-2 break-words">
                     {p.name}
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-5">
                     {p.description}
                   </p>
-                  <Link
-                    to={p.href}
-                    className="inline-block px-5 py-2 rounded-lg btn-ghost text-sm font-semibold"
-                  >
-                    Learn More
-                  </Link>
+                  {"specs" in p && Array.isArray((p as { specs?: readonly string[] }).specs) && (
+                    <ul className="space-y-2 mb-6">
+                      {(p as { specs: readonly string[] }).specs.map((s) => (
+                        <li key={s} className="flex items-start gap-2 text-xs text-foreground/80">
+                          <Check size={14} className="mt-0.5 text-primary shrink-0" />
+                          <span>{s}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <div className="mt-auto">
+                    <Link
+                      to={p.href}
+                      className="inline-block px-5 py-2 rounded-lg btn-ghost text-sm font-semibold"
+                    >
+                      Learn More
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             );

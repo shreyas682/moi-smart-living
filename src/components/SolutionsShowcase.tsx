@@ -2,20 +2,18 @@ import { motion } from "framer-motion";
 import {
   Home,
   Coffee,
-  Hotel,
+  Store,
   Building2,
   Lightbulb,
-  Mic,
-  Thermometer,
-  ShieldCheck,
-  Music2,
-  Zap,
   Sparkles,
-  Wind,
-  BedDouble,
-  Activity,
+  Calendar,
+  Palette,
+  Music2,
+  Sun,
+  Layers,
   Users,
-  Cpu,
+  Zap,
+  Eye,
 } from "lucide-react";
 
 const solutions = [
@@ -23,59 +21,59 @@ const solutions = [
     id: "home",
     eyebrow: "Smart Homes",
     icon: Home,
-    title: "A home that responds to you",
+    title: "Lighting scenes that match your mood",
     description:
-      "Centralized lighting, climate, security and voice — orchestrated from one premium mobile app.",
+      "Warm dinners, focused work, lazy Sundays — one tap reshapes every room.",
     features: [
-      { icon: Lightbulb, label: "Smart lighting & scenes" },
-      { icon: Mic, label: "Voice & app control" },
-      { icon: Thermometer, label: "Climate automation" },
-      { icon: ShieldCheck, label: "Security automation" },
+      { icon: Lightbulb, label: "Room-by-room scenes" },
+      { icon: Sun, label: "Tunable white & RGB" },
+      { icon: Calendar, label: "Sunrise & schedule automations" },
+      { icon: Sparkles, label: "Designer-friendly presets" },
     ],
     accent: "from-primary/15 via-primary/5 to-transparent",
   },
   {
     id: "cafe",
-    eyebrow: "Smart Cafes",
+    eyebrow: "Cafes & Restaurants",
     icon: Coffee,
-    title: "Ambience tuned for every hour",
+    title: "Ambience that changes with your hours",
     description:
-      "Mood lighting, music sync and energy-saving zones — controlled from a single cafe dashboard.",
+      "Bright mornings, golden evenings, late-night low — automated to your service hours.",
     features: [
-      { icon: Sparkles, label: "Mood lighting zones" },
-      { icon: Music2, label: "Music synchronization" },
-      { icon: Zap, label: "Energy-saving automation" },
-      { icon: Cpu, label: "Centralized controls" },
+      { icon: Sun, label: "Day-to-night transitions" },
+      { icon: Music2, label: "Lighting tuned to playlists" },
+      { icon: Zap, label: "Auto on/off by schedule" },
+      { icon: Layers, label: "Zone-based control" },
     ],
     accent: "from-amber-400/15 via-primary/5 to-transparent",
   },
   {
-    id: "hotel",
-    eyebrow: "Smart Hotels",
-    icon: Hotel,
-    title: "Guest experiences, automated",
+    id: "retail",
+    eyebrow: "Boutiques & Retail",
+    icon: Store,
+    title: "Lighting that sells",
     description:
-      "Occupancy-aware rooms, scene presets and floor-wide dashboards for premium hospitality brands.",
+      "Accent fixtures, product spotlights and window scenes — controlled like a campaign.",
     features: [
-      { icon: BedDouble, label: "Guest room scenes" },
-      { icon: Wind, label: "Curtains & AC control" },
-      { icon: Activity, label: "Occupancy automation" },
-      { icon: Cpu, label: "Centralized management" },
+      { icon: Eye, label: "Product accent lighting" },
+      { icon: Palette, label: "Brand color scenes" },
+      { icon: Calendar, label: "Window scene scheduling" },
+      { icon: Layers, label: "Multi-zone control" },
     ],
     accent: "from-sky-400/15 via-primary/5 to-transparent",
   },
   {
     id: "office",
-    eyebrow: "Smart Offices",
+    eyebrow: "Offices",
     icon: Building2,
-    title: "Workspaces that work smarter",
+    title: "Productive spaces, zero wiring chaos",
     description:
-      "Meeting-room automation, floor-wise controls and enterprise IoT management at scale.",
+      "Retrofit lighting into any office floor without rewiring or shutdown.",
     features: [
-      { icon: Users, label: "Meeting room automation" },
-      { icon: Activity, label: "Occupancy sensing" },
-      { icon: Lightbulb, label: "Lighting & AC zones" },
-      { icon: Cpu, label: "Enterprise IoT management" },
+      { icon: Users, label: "Meeting room presets" },
+      { icon: Sun, label: "Daylight-aware dimming" },
+      { icon: Layers, label: "Floor & zone control" },
+      { icon: Zap, label: "Energy-efficient schedules" },
     ],
     accent: "from-emerald-400/15 via-primary/5 to-transparent",
   },
@@ -141,13 +139,13 @@ const SolutionsShowcase = () => {
           className="max-w-2xl mx-auto text-center mb-20"
         >
           <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
-            IoT Automation Ecosystem
+            Use Cases
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
-            Built for every kind of space
+            Lighting for every kind of space
           </h2>
           <p className="text-muted-foreground">
-            One platform powering homes, cafes, hotels and offices — with the same premium experience.
+            Premium smart lighting for homes, cafes, boutiques and offices — retrofitted in hours.
           </p>
         </motion.div>
 
