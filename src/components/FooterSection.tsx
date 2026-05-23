@@ -1,29 +1,29 @@
-import { Mail, Twitter, Linkedin, Github } from "lucide-react";
+import { Mail, Twitter, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const quickLinks = [
   { name: "Home", href: "/" },
   { name: "Products", href: "/products" },
-  { name: "Solutions", href: "/solutions" },
+  { name: "Use Cases", href: "/solutions" },
   { name: "Partners", href: "/partners" },
   { name: "Contact", href: "/contact" },
 ];
 
 const FooterSection = () => {
   return (
-    <footer className="footer-dark py-16 px-6">
+    <footer className="footer-dark py-16 px-6 border-t border-white/5">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         <div>
           <h3 className="text-lg font-bold tracking-tight text-white mb-3 [text-shadow:0_0_18px_hsl(26_100%_50%/0.4)]">
             MOI <span className="text-primary">Technologies</span>
           </h3>
           <p className="text-sm text-white/70 leading-relaxed">
-            Smart solutions for modern spaces and intelligent automation.
+            Lighting technology for design-conscious spaces.
           </p>
         </div>
 
         <div>
-          <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-5">Quick Links</h4>
+          <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-5">Quick Links</h4>
           <ul className="space-y-3 text-sm text-white/80">
             {quickLinks.map((link) => (
               <li key={link.name}>
@@ -36,19 +36,18 @@ const FooterSection = () => {
         </div>
 
         <div>
-          <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-5">Connect</h4>
+          <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-5">Connect</h4>
           <div className="flex items-center gap-2 text-sm text-white/80 mb-5">
             <Mail size={16} className="text-primary" /> contact@moitech.com
           </div>
           <div className="flex gap-4">
             <a href="#" className="text-white/70 hover:text-primary transition-colors duration-300"><Twitter size={20} /></a>
             <a href="#" className="text-white/70 hover:text-primary transition-colors duration-300"><Linkedin size={20} /></a>
-            <a href="#" className="text-white/70 hover:text-primary transition-colors duration-300"><Github size={20} /></a>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto mt-12 pt-6 border-t border-white/10 text-center text-xs text-white/60">
+      <div className="container mx-auto mt-12 pt-6 border-t border-[hsl(0_0%_16%)] text-center text-xs text-[hsl(0_0%_53%)]">
         © 2026 MOI Technologies. All rights reserved.
       </div>
     </footer>
