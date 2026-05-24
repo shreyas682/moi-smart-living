@@ -97,7 +97,7 @@ const AppMockup = ({ eyebrow, scene }: { eyebrow: string; scene: string }) => (
 
 const SolutionsShowcase = () => {
   return (
-    <section className="py-24 px-6 bg-white">
+    <section className="py-24 px-6">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
