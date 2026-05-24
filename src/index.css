@@ -184,14 +184,13 @@
 
   .nav-dark {
     background: hsl(var(--black-pure));
-    border-bottom: 1px solid hsl(0 0% 100% / 0.08);
+    border-bottom: 1px solid hsl(0 0% 12%);
     box-shadow: 0 4px 20px hsl(0 0% 0% / 0.4);
   }
 
   .nav-dark-scrolled {
-    background: hsl(var(--black-pure) / 0.85);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: hsl(var(--black-pure));
+    border-bottom: 1px solid hsl(0 0% 12%);
   }
 
   .footer-dark {

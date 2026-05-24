@@ -4,17 +4,16 @@ import switchHero from "@/assets/two-node-smart-switch-hero.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16 lg:pt-0 lg:pb-0 bg-[hsl(0_0%_7%)] text-white">
-      {/* Warm amber lighting glow */}
-      <div className="absolute top-1/3 right-1/3 w-[700px] h-[700px] rounded-full bg-[hsl(28_100%_55%/0.22)] blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-[hsl(38_100%_60%/0.12)] blur-[140px] pointer-events-none" />
-      {/* Subtle grid */}
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16 lg:pt-0 lg:pb-0 bg-[#111111] text-white">
+      {/* Subtle warm radial glow behind headline */}
+      <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-[hsl(26_100%_50%/0.15)] blur-[180px] pointer-events-none" />
+      {/* Extremely subtle grid */}
       <div
-        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage:
             "linear-gradient(hsl(0 0% 100% / 1) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100% / 1) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
+          backgroundSize: "80px 80px",
         }}
       />
 

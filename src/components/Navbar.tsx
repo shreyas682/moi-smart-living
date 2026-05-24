@@ -6,7 +6,6 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "Products", href: "/products" },
   { name: "Use Cases", href: "/solutions" },
-  { name: "App", href: "/#moi-space", external: true },
   { name: "Partners", href: "/partners" },
   { name: "Contact", href: "/contact" },
 ];
