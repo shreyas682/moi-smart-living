@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
 import { motion } from "framer-motion";
-import { Mail, Clock, MapPin, Building2 } from "lucide-react";
+import { Mail, Clock } from "lucide-react";
 
 const Contact = () => {
   return (
