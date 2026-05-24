@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
 import { motion } from "framer-motion";
-import { Mail, Phone, Clock, Lightbulb } from "lucide-react";
+import { Mail, Clock } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -28,32 +28,24 @@ const Contact = () => {
                 Talk to our lighting team. We'll help you plan scenes, zones and a clean install for your home, cafe, boutique or office.
               </p>
 
-              {/* Visual */}
-              <div className="relative aspect-[5/4] w-full rounded-2xl border border-border overflow-hidden bg-gradient-to-br from-white to-secondary mb-10">
-                <div
-                  className="absolute inset-0 opacity-50"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(hsl(0 0% 0% / 0.05) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 0% / 0.05) 1px, transparent 1px)",
-                    backgroundSize: "32px 32px",
-                    transform: "perspective(700px) rotateX(50deg) translateY(20%) scale(1.4)",
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative">
-                    <div className="absolute inset-0 rounded-2xl bg-primary/30 blur-2xl" />
-                    <div className="relative w-24 h-24 rounded-2xl bg-white border border-border shadow-xl flex items-center justify-center text-primary">
-                      <Lightbulb size={44} strokeWidth={1.5} />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* Trust signals */}
+              <ul className="space-y-3 mb-10">
+                {[
+                  "Avg. response time: within 24 hours",
+                  "Serving homes, cafes, boutiques & offices",
+                  "Based in Delhi NCR — Pan-India installations",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-foreground/80">
+                    <span className="mt-1 text-primary">✦</span>
+                    <span className="text-sm md:text-base">{t}</span>
+                  </li>
+                ))}
+              </ul>
 
               {/* Support cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   { icon: Mail, label: "Email", value: "contact@moitech.com" },
-                  { icon: Phone, label: "Call", value: "+91 98765 43210" },
                   { icon: Clock, label: "Hours", value: "Mon–Sat · 9–7" },
                 ].map((c) => (
                   <div
@@ -66,7 +58,7 @@ const Contact = () => {
                     <div className="text-[10px] font-semibold tracking-wider uppercase text-muted-foreground">
                       {c.label}
                     </div>
-                    <div className="text-sm font-semibold text-foreground">{c.value}</div>
+                    <div className="text-sm font-semibold text-foreground break-all">{c.value}</div>
                   </div>
                 ))}
               </div>

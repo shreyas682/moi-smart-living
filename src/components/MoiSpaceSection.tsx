@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import { Palette, Calendar, Layers, LayoutDashboard, Smartphone, Sun, Moon, Coffee } from "lucide-react";
+import { Palette, Calendar, Layers, Smartphone, Sun, Moon, Coffee, Lightbulb, Clock, Globe, Users } from "lucide-react";
 
 const features = [
-  { icon: Palette, label: "Scene design" },
-  { icon: Calendar, label: "Scheduling" },
-  { icon: Layers, label: "Multi-zone control" },
-  { icon: LayoutDashboard, label: "Installer dashboard" },
+  { icon: Lightbulb, label: "Design lighting scenes room by room" },
+  { icon: Clock, label: "Set schedules that run automatically" },
+  { icon: Globe, label: "Control from anywhere" },
+  { icon: Users, label: "Multi-user access for staff or family" },
 ];
 
-const PhoneMockup = ({ tone = "warm" }: { tone?: "warm" | "cool" }) => (
+const PhoneMockup = ({ tone = "warm", label = "Scene Control" }: { tone?: "warm" | "cool"; label?: string }) => (
   <div className="relative w-[180px] md:w-[210px] aspect-[9/19] rounded-[2.2rem] bg-[hsl(0_0%_10%)] border border-white/10 shadow-[0_30px_60px_-20px_hsl(28_100%_50%/0.4)] p-2">
     <div className="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-4 rounded-full bg-black z-10" />
     <div className="relative w-full h-full rounded-[1.7rem] overflow-hidden bg-gradient-to-br from-[hsl(0_0%_8%)] to-[hsl(0_0%_4%)]">
@@ -22,7 +22,7 @@ const PhoneMockup = ({ tone = "warm" }: { tone?: "warm" | "cool" }) => (
       <div className="relative p-4 pt-10 text-white h-full flex flex-col gap-3">
         <div>
           <p className="text-[10px] tracking-[0.2em] text-white/40 uppercase">Moi Space</p>
-          <p className="text-sm font-bold">Living Room</p>
+          <p className="text-sm font-bold text-primary">{label}</p>
         </div>
         <div className="grid grid-cols-2 gap-2 mt-2">
           {[
@@ -57,40 +57,22 @@ const MoiSpaceSection = () => {
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-primary/15 blur-[140px] pointer-events-none" />
       <div className="relative z-10 container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7 }}
-          className="flex items-end justify-center gap-4 md:gap-6"
-        >
-          <div className="translate-y-6">
-            <PhoneMockup tone="warm" />
-          </div>
-          <div>
-            <PhoneMockup tone="cool" />
-          </div>
-        </motion.div>
-
-        <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
         >
           <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.25em] text-primary uppercase mb-5">
-            <Smartphone size={14} /> Moi Space App
+            <Smartphone size={14} /> Moi Space
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-[1.02] mb-6">
             One App. <span className="text-gradient-cyan">Total Control.</span>
           </h2>
-          <p className="text-lg text-white/70 leading-relaxed max-w-lg mb-10">
-            Moi Space is our purpose-built lighting app — designed for scenes, schedules and zones, not generic IoT clutter.
-          </p>
-          <div className="grid grid-cols-2 gap-4 max-w-md">
+          <div className="grid grid-cols-1 gap-3 max-w-md mb-6">
             {features.map((f) => (
               <div
                 key={f.label}
-                className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-primary/50 transition-colors"
+                className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-primary/50 transition-colors"
               >
                 <div className="w-9 h-9 rounded-lg bg-primary/15 text-primary flex items-center justify-center">
                   <f.icon size={16} />
@@ -98,6 +80,22 @@ const MoiSpaceSection = () => {
                 <span className="text-sm font-medium text-white">{f.label}</span>
               </div>
             ))}
+          </div>
+          <p className="text-xs text-white/50">Available on iOS &amp; Android — download coming soon</p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7 }}
+          className="flex items-end justify-center gap-4 md:gap-6 order-first lg:order-last"
+        >
+          <div className="translate-y-6">
+            <PhoneMockup tone="warm" label="Scene Control" />
+          </div>
+          <div>
+            <PhoneMockup tone="cool" label="Schedule View" />
           </div>
         </motion.div>
       </div>

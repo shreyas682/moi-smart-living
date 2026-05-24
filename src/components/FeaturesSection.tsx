@@ -49,7 +49,7 @@ const FeatureCard = ({ feature, index }: { feature: typeof features[0]; index: n
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
-          background: `radial-gradient(400px circle at ${mousePos.x}% ${mousePos.y}%, hsl(190 100% 50% / 0.08), transparent 60%)`,
+          background: `radial-gradient(400px circle at ${mousePos.x}% ${mousePos.y}%, hsl(26 100% 50% / 0.08), transparent 60%)`,
         }}
       />
       <div className="relative z-10 flex flex-col items-center h-full">
