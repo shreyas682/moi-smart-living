@@ -21,6 +21,7 @@ const solutions = [
     id: "home",
     eyebrow: "Smart Homes",
     icon: Home,
+    scene: "Evening Scene",
     title: "Lighting scenes that match your mood",
     description:
       "Warm dinners, focused work, lazy Sundays — one tap reshapes every room.",
@@ -30,12 +31,12 @@ const solutions = [
       { icon: Calendar, label: "Sunrise & schedule automations" },
       { icon: Sparkles, label: "Designer-friendly presets" },
     ],
-    accent: "from-primary/15 via-primary/5 to-transparent",
   },
   {
     id: "cafe",
     eyebrow: "Cafes & Restaurants",
     icon: Coffee,
+    scene: "Golden Hour",
     title: "Ambience that changes with your hours",
     description:
       "Bright mornings, golden evenings, late-night low — automated to your service hours.",
@@ -45,12 +46,12 @@ const solutions = [
       { icon: Zap, label: "Auto on/off by schedule" },
       { icon: Layers, label: "Zone-based control" },
     ],
-    accent: "from-amber-400/15 via-primary/5 to-transparent",
   },
   {
     id: "retail",
     eyebrow: "Boutiques & Retail",
     icon: Store,
+    scene: "Window Display",
     title: "Lighting that sells",
     description:
       "Accent fixtures, product spotlights and window scenes — controlled like a campaign.",
@@ -60,12 +61,12 @@ const solutions = [
       { icon: Calendar, label: "Window scene scheduling" },
       { icon: Layers, label: "Multi-zone control" },
     ],
-    accent: "from-sky-400/15 via-primary/5 to-transparent",
   },
   {
     id: "office",
     eyebrow: "Offices",
     icon: Building2,
+    scene: "Focus Mode",
     title: "Productive spaces, zero wiring chaos",
     description:
       "Retrofit lighting into any office floor without rewiring or shutdown.",
@@ -75,55 +76,22 @@ const solutions = [
       { icon: Layers, label: "Floor & zone control" },
       { icon: Zap, label: "Energy-efficient schedules" },
     ],
-    accent: "from-emerald-400/15 via-primary/5 to-transparent",
   },
 ];
 
-const IsoVisual = ({ Icon }: { Icon: typeof Home }) => (
-  <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-border bg-gradient-to-br from-secondary to-white">
-    {/* Grid floor */}
-    <div
-      className="absolute inset-0 opacity-60"
-      style={{
-        backgroundImage:
-          "linear-gradient(hsl(0 0% 0% / 0.05) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 0% / 0.05) 1px, transparent 1px)",
-        backgroundSize: "32px 32px",
-        transform: "perspective(700px) rotateX(55deg) translateY(20%) scale(1.4)",
-        transformOrigin: "center",
-      }}
-    />
-    {/* Glow nodes */}
-    <div className="absolute top-1/4 left-1/4 w-20 h-20 rounded-full bg-primary/30 blur-2xl animate-pulse" />
-    <div className="absolute bottom-1/4 right-1/4 w-24 h-24 rounded-full bg-primary/20 blur-3xl" />
-    {/* Floating UI card */}
-    <div className="absolute top-5 right-5 px-3 py-2 rounded-lg bg-white/90 backdrop-blur border border-border shadow-md flex items-center gap-2 text-xs font-medium text-foreground">
-      <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-      Live • 4 devices
-    </div>
-    {/* Center icon */}
-    <div className="absolute inset-0 flex items-center justify-center">
-      <div className="relative">
-        <div className="absolute inset-0 rounded-2xl bg-primary/30 blur-2xl" />
-        <div className="relative w-24 h-24 rounded-2xl bg-white border border-border shadow-xl flex items-center justify-center text-primary">
-          <Icon size={44} strokeWidth={1.6} />
+const AppMockup = ({ eyebrow, scene }: { eyebrow: string; scene: string }) => (
+  <div className="relative w-full rounded-3xl bg-[#1A1A1A] p-8 md:p-12 flex items-center justify-center overflow-hidden">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,hsl(26_100%_50%/0.18),transparent_60%)] pointer-events-none" />
+    <div className="relative w-[240px] md:w-[280px] aspect-[9/19] rounded-[2.4rem] bg-black border border-white/10 shadow-[0_30px_80px_-20px_hsl(0_0%_0%/0.8)] p-2">
+      <div className="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-4 rounded-full bg-black z-10 border border-white/10" />
+      <div className="relative w-full h-full rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#161616] to-[#0a0a0a] flex items-center justify-center p-6">
+        <div className="text-center">
+          <p className="text-[10px] tracking-[0.25em] text-white/40 uppercase mb-2">Moi Space App</p>
+          <p className="text-primary text-base md:text-lg font-bold">{eyebrow}</p>
+          <p className="text-white/60 text-xs mt-1">{scene}</p>
         </div>
       </div>
     </div>
-    {/* Connection lines */}
-    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 300" fill="none">
-      <path
-        d="M 80 80 Q 200 30 320 80"
-        stroke="hsl(26 100% 50% / 0.4)"
-        strokeWidth="1.5"
-        strokeDasharray="4 4"
-      />
-      <path
-        d="M 80 220 Q 200 270 320 220"
-        stroke="hsl(26 100% 50% / 0.4)"
-        strokeWidth="1.5"
-        strokeDasharray="4 4"
-      />
-    </svg>
   </div>
 );
 
@@ -155,19 +123,19 @@ const SolutionsShowcase = () => {
             return (
               <motion.div
                 key={s.id}
+                id={s.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.7 }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
+                className={`scroll-mt-28 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
                   reverse ? "lg:[&>div:first-child]:order-2" : ""
                 }`}
               >
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wider uppercase mb-5">
-                    <s.icon size={14} />
+                  <p className="text-xs font-semibold tracking-[0.25em] text-primary uppercase mb-5">
                     {s.eyebrow}
-                  </div>
+                  </p>
                   <h3 className="text-2xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
                     {s.title}
                   </h3>
@@ -188,14 +156,7 @@ const SolutionsShowcase = () => {
                     ))}
                   </div>
                 </div>
-                <div className="relative">
-                  <div
-                    className={`absolute -inset-6 rounded-3xl bg-gradient-to-br ${s.accent} blur-2xl pointer-events-none`}
-                  />
-                  <div className="relative">
-                    <IsoVisual Icon={s.icon} />
-                  </div>
-                </div>
+                <AppMockup eyebrow={s.eyebrow} scene={s.scene} />
               </motion.div>
             );
           })}
