@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import switchHero from "@/assets/two-node-smart-switch-hero.png";
+import HeroScenePanel from "./HeroScenePanel";
 
 const HeroSection = () => {
   return (
@@ -58,14 +58,8 @@ const HeroSection = () => {
             className="relative"
           >
             <div className="absolute -inset-8 bg-[hsl(28_100%_55%/0.18)] blur-3xl rounded-full pointer-events-none" />
-            <div className="relative aspect-square rounded-3xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-[hsl(0_0%_10%)] to-[hsl(0_0%_5%)] border border-white/5 shadow-[0_30px_80px_-20px_hsl(28_100%_50%/0.35)]">
-              <img
-                src={switchHero}
-                alt="MOI Two-Node Smart Switch"
-                decoding="async"
-                fetchPriority="high"
-                className="relative w-full h-full object-contain p-10"
-              />
+            <div className="relative">
+              <HeroScenePanel />
             </div>
           </motion.div>
         </div>
