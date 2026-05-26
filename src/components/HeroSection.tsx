@@ -27,10 +27,10 @@ const HeroSection = () => {
             <span className="inline-block text-xs font-semibold tracking-[0.25em] text-primary uppercase mb-6">
               MOI Technologies
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter mb-6 leading-[0.95]">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 leading-[1.1]">
               Lighting That
               <br />
-              <span className="text-gradient-cyan">Thinks.</span>
+              <span className="text-gradient-cyan inline-block pb-2">Thinks.</span>
             </h1>
             <p className="text-lg md:text-xl text-white/70 mb-10 max-w-xl leading-relaxed font-medium">
               Wireless smart lighting for homes, cafes, boutiques and offices — installed in hours, controlled from one app.
