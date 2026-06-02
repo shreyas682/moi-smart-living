@@ -5,9 +5,9 @@ import FooterSection from "@/components/FooterSection";
 import { Home as HomeIcon, Coffee, Store, Building2 } from "lucide-react";
 
 const solutionItems = [
-  { icon: HomeIcon, title: "Smart Homes", description: "Scenes that match your mood.", href: "#home" },
-  { icon: Coffee, title: "Cafes", description: "Ambience tuned to service hours.", href: "#cafe" },
-  { icon: Store, title: "Boutiques", description: "Window & accent lighting on schedule.", href: "#retail" },
+  { icon: HomeIcon, title: "Homes", description: "Scenes that match your mood.", href: "#home" },
+  { icon: Coffee, title: "Cafes & Restaurants", description: "Ambience tuned to service hours.", href: "#cafe" },
+  { icon: Store, title: "Boutiques & Retail", description: "Window & accent lighting on schedule.", href: "#retail" },
   { icon: Building2, title: "Offices", description: "Retrofitted, zero rewiring chaos.", href: "#office" },
 ];
 
@@ -19,7 +19,7 @@ const Solutions = () => {
         <section className="py-20 px-6 bg-white">
           <div className="container mx-auto text-center">
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
-              Lighting use cases for <span className="text-primary">modern spaces</span>
+              Built for <span className="text-primary">your space</span>
             </h1>
             <p className="text-muted-foreground max-w-xl mx-auto">
               Designed for homes, cafes, boutiques and offices — installed in hours.
