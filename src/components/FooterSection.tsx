@@ -1,4 +1,4 @@
-import { Mail, Twitter, Linkedin } from "lucide-react";
+import { Mail, Twitter, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const quickLinks = [
@@ -18,7 +18,7 @@ const FooterSection = () => {
             MOI <span className="text-primary">Technologies</span>
           </h3>
           <p className="text-sm text-white/70 leading-relaxed">
-            Lighting technology for design-conscious spaces.
+            Smart lighting, thoughtfully built.
           </p>
         </div>
 
@@ -43,6 +43,7 @@ const FooterSection = () => {
           <div className="flex gap-4">
             <a href="#" className="text-white/70 hover:text-primary transition-colors duration-300"><Twitter size={20} /></a>
             <a href="#" className="text-white/70 hover:text-primary transition-colors duration-300"><Linkedin size={20} /></a>
+            <a href="#" aria-label="Instagram" className="text-white/70 hover:text-primary transition-colors duration-300"><Instagram size={20} /></a>
           </div>
         </div>
       </div>

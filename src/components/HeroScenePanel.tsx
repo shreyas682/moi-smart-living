@@ -14,37 +14,45 @@ const scenes: Record<
     bulb: string;
     wall: string;
     floor: string;
+    tint: string;
+    brightness: number;
   }
 > = {
   morning: {
     label: "Morning",
     caption: "Cool white • 5500K",
     icon: Sun,
-    glow: "hsl(210 90% 75% / 0.55)",
+    glow: "hsl(210 95% 80% / 0.75)",
     ambient: "hsl(210 60% 90%)",
     bulb: "hsl(200 100% 92%)",
-    wall: "hsl(220 15% 22%)",
-    floor: "hsl(220 12% 14%)",
+    wall: "hsl(215 20% 38%)",
+    floor: "hsl(215 15% 24%)",
+    tint: "hsl(210 80% 75% / 0.18)",
+    brightness: 1.15,
   },
   dinner: {
     label: "Dinner",
     caption: "Warm amber • 2700K",
     icon: UtensilsCrossed,
-    glow: "hsl(28 100% 55% / 0.6)",
+    glow: "hsl(28 100% 55% / 0.8)",
     ambient: "hsl(32 90% 60%)",
     bulb: "hsl(35 100% 75%)",
-    wall: "hsl(24 30% 22%)",
-    floor: "hsl(22 28% 14%)",
+    wall: "hsl(24 45% 28%)",
+    floor: "hsl(22 40% 18%)",
+    tint: "hsl(28 90% 50% / 0.22)",
+    brightness: 1,
   },
   night: {
     label: "Night",
     caption: "Dim glow • 1800K",
     icon: Moon,
-    glow: "hsl(15 90% 40% / 0.5)",
-    ambient: "hsl(15 70% 35%)",
-    bulb: "hsl(20 90% 55%)",
-    wall: "hsl(15 25% 14%)",
-    floor: "hsl(15 25% 9%)",
+    glow: "hsl(15 80% 35% / 0.55)",
+    ambient: "hsl(15 70% 30%)",
+    bulb: "hsl(18 85% 50%)",
+    wall: "hsl(15 25% 10%)",
+    floor: "hsl(15 25% 6%)",
+    tint: "hsl(0 0% 0% / 0.35)",
+    brightness: 0.7,
   },
 };
 
@@ -55,7 +63,10 @@ const HeroScenePanel = () => {
   return (
     <div className="relative w-full rounded-2xl bg-[#1A1A1A] border border-white/5 shadow-[0_30px_80px_-20px_hsl(0_0%_0%/0.8)] p-6 md:p-8">
       {/* Room illustration */}
-      <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#0d0d0d]">
+      <div
+        className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#0d0d0d] transition-all duration-[450ms] ease-out"
+        style={{ filter: `brightness(${s.brightness})` }}
+      >
         {/* Ambient glow */}
         <div
           className="absolute inset-0 transition-all duration-[400ms] ease-out"
@@ -121,6 +132,11 @@ const HeroScenePanel = () => {
         <div
           className="absolute left-1/2 -translate-x-1/2 w-40 h-40 rounded-full blur-3xl pointer-events-none transition-all duration-[400ms]"
           style={{ top: "22%", background: s.glow }}
+        />
+        {/* Scene color tint overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none transition-all duration-[450ms] ease-out mix-blend-soft-light"
+          style={{ background: s.tint }}
         />
       </div>
 

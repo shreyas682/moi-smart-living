@@ -63,6 +63,10 @@ const ContactSection = () => {
                 <Input id="email" type="email" placeholder="you@example.com" required className="bg-secondary border-0" />
               </div>
               <div className="space-y-2">
+                <Label htmlFor="phone" className="text-sm font-medium">Phone Number</Label>
+                <Input id="phone" type="tel" placeholder="+91 98765 43210" className="bg-secondary border-0" />
+              </div>
+              <div className="space-y-2">
                 <Label htmlFor="company" className="text-sm font-medium">Company</Label>
                 <Input id="company" placeholder="Company name" className="bg-secondary border-0" />
               </div>
@@ -78,8 +82,8 @@ const ContactSection = () => {
                 >
                   <option value="" disabled>Select a project type</option>
                   <option value="residential">Residential</option>
-                  <option value="cafe">Cafe</option>
-                  <option value="retail">Retail</option>
+                  <option value="cafe-restaurant">Cafe/Restaurant</option>
+                  <option value="boutique-retail">Boutique/Retail</option>
                   <option value="office">Office</option>
                   <option value="other">Other</option>
                 </select>
