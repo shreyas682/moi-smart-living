@@ -3,18 +3,16 @@ import { Sun, UtensilsCrossed, Moon } from "lucide-react";
 
 type SceneKey = "morning" | "dinner" | "night";
 
+const ROOM_PHOTO =
+  "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80";
+
 const scenes: Record<
   SceneKey,
   {
     label: string;
     caption: string;
     icon: typeof Sun;
-    glow: string;
-    ambient: string;
-    bulb: string;
-    wall: string;
-    floor: string;
-    tint: string;
+    overlay: string;
     brightness: number;
   }
 > = {
@@ -22,37 +20,22 @@ const scenes: Record<
     label: "Morning",
     caption: "Cool white • 5500K",
     icon: Sun,
-    glow: "hsl(210 95% 80% / 0.75)",
-    ambient: "hsl(210 60% 90%)",
-    bulb: "hsl(200 100% 92%)",
-    wall: "hsl(215 20% 38%)",
-    floor: "hsl(215 15% 24%)",
-    tint: "hsl(210 80% 75% / 0.18)",
-    brightness: 1.15,
+    overlay: "rgba(200, 220, 255, 0.25)",
+    brightness: 1.05,
   },
   dinner: {
     label: "Dinner",
     caption: "Warm amber • 2700K",
     icon: UtensilsCrossed,
-    glow: "hsl(28 100% 55% / 0.8)",
-    ambient: "hsl(32 90% 60%)",
-    bulb: "hsl(35 100% 75%)",
-    wall: "hsl(24 45% 28%)",
-    floor: "hsl(22 40% 18%)",
-    tint: "hsl(28 90% 50% / 0.22)",
+    overlay: "rgba(255, 160, 40, 0.35)",
     brightness: 1,
   },
   night: {
     label: "Night",
     caption: "Dim glow • 1800K",
     icon: Moon,
-    glow: "hsl(15 80% 35% / 0.55)",
-    ambient: "hsl(15 70% 30%)",
-    bulb: "hsl(18 85% 50%)",
-    wall: "hsl(15 25% 10%)",
-    floor: "hsl(15 25% 6%)",
-    tint: "hsl(0 0% 0% / 0.35)",
-    brightness: 0.7,
+    overlay: "rgba(120, 50, 10, 0.55)",
+    brightness: 0.6,
   },
 };
 
@@ -62,81 +45,20 @@ const HeroScenePanel = () => {
 
   return (
     <div className="relative w-full rounded-2xl bg-[#1A1A1A] border border-white/5 shadow-[0_30px_80px_-20px_hsl(0_0%_0%/0.8)] p-6 md:p-8">
-      {/* Room illustration */}
+      {/* Room photo with scene-tinted overlay */}
       <div
-        className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#0d0d0d] transition-all duration-[450ms] ease-out"
-        style={{ filter: `brightness(${s.brightness})` }}
+        className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#0d0d0d]"
+        style={{ transition: "all 0.4s ease", filter: `brightness(${s.brightness})` }}
       >
-        {/* Ambient glow */}
-        <div
-          className="absolute inset-0 transition-all duration-[400ms] ease-out"
-          style={{
-            background: `radial-gradient(ellipse at 50% 18%, ${s.glow}, transparent 65%)`,
-          }}
+        <img
+          src={ROOM_PHOTO}
+          alt="Modern living room with smart lighting"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
-        {/* Isometric room SVG */}
-        <svg
-          viewBox="0 0 400 300"
-          className="absolute inset-0 w-full h-full"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          {/* Back wall */}
-          <polygon
-            points="80,40 320,40 320,200 80,200"
-            fill={s.wall}
-            style={{ transition: "fill 400ms ease-out" }}
-          />
-          {/* Floor */}
-          <polygon
-            points="80,200 320,200 360,260 40,260"
-            fill={s.floor}
-            style={{ transition: "fill 400ms ease-out" }}
-          />
-          {/* Pendant cord */}
-          <line x1="200" y1="40" x2="200" y2="95" stroke="hsl(0 0% 30%)" strokeWidth="1.5" />
-          {/* Pendant lamp shade */}
-          <path
-            d="M 175 95 Q 200 90 225 95 L 215 120 Q 200 125 185 120 Z"
-            fill="hsl(0 0% 12%)"
-            stroke="hsl(0 0% 25%)"
-            strokeWidth="1"
-          />
-          {/* Bulb light */}
-          <ellipse
-            cx="200"
-            cy="125"
-            rx="14"
-            ry="6"
-            fill={s.bulb}
-            style={{ transition: "fill 400ms ease-out" }}
-          />
-          {/* Light cone */}
-          <polygon
-            points="186,118 214,118 280,260 120,260"
-            fill={s.glow}
-            opacity="0.55"
-            style={{ transition: "fill 400ms ease-out" }}
-          />
-          {/* Sofa */}
-          <rect x="110" y="180" width="80" height="30" rx="4" fill="hsl(0 0% 16%)" />
-          <rect x="110" y="170" width="80" height="14" rx="3" fill="hsl(0 0% 20%)" />
-          {/* Side table */}
-          <rect x="210" y="195" width="30" height="20" fill="hsl(0 0% 14%)" />
-          {/* Wall art */}
-          <rect x="240" y="80" width="50" height="40" fill="hsl(0 0% 10%)" stroke="hsl(0 0% 22%)" />
-          {/* Plant */}
-          <rect x="290" y="180" width="18" height="22" fill="hsl(0 0% 14%)" />
-          <circle cx="299" cy="172" r="14" fill={s.ambient} opacity="0.35" style={{ transition: "fill 400ms ease-out" }} />
-        </svg>
-        {/* Bulb halo */}
         <div
-          className="absolute left-1/2 -translate-x-1/2 w-40 h-40 rounded-full blur-3xl pointer-events-none transition-all duration-[400ms]"
-          style={{ top: "22%", background: s.glow }}
-        />
-        {/* Scene color tint overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none transition-all duration-[450ms] ease-out mix-blend-soft-light"
-          style={{ background: s.tint }}
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: s.overlay, transition: "all 0.4s ease" }}
         />
       </div>
 
