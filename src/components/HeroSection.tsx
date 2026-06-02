@@ -33,7 +33,7 @@ const HeroSection = () => {
               <span className="text-gradient-cyan inline-block pb-2">Thinks.</span>
             </h1>
             <p className="text-lg md:text-xl text-white/70 mb-10 max-w-xl leading-relaxed font-medium">
-              Wireless smart lighting for homes, cafes, boutiques and offices — installed in hours, controlled from one app.
+              Retrofit smart lighting for homes, cafes, boutiques and offices — no rewiring, one app.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link
