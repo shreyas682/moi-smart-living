@@ -24,9 +24,6 @@ const HeroSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <span className="inline-block text-xs font-semibold tracking-[0.25em] text-primary uppercase mb-6">
-              MOI Technologies
-            </span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 leading-[1.1]">
               Lighting That
               <br />
