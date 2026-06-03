@@ -3,39 +3,35 @@ import { Sun, UtensilsCrossed, Moon } from "lucide-react";
 
 type SceneKey = "morning" | "dinner" | "night";
 
-const ROOM_PHOTO =
-  "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80";
-
 const scenes: Record<
   SceneKey,
   {
     label: string;
     caption: string;
     icon: typeof Sun;
-    overlay: string;
-    brightness: number;
+    photo: string;
   }
 > = {
   morning: {
     label: "Morning",
     caption: "Cool white • 5500K",
     icon: Sun,
-    overlay: "rgba(200, 220, 255, 0.25)",
-    brightness: 1.05,
+    photo:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
   },
   dinner: {
     label: "Dinner",
     caption: "Warm amber • 2700K",
     icon: UtensilsCrossed,
-    overlay: "rgba(255, 160, 40, 0.35)",
-    brightness: 1,
+    photo:
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80",
   },
   night: {
     label: "Night",
     caption: "Dim glow • 1800K",
     icon: Moon,
-    overlay: "rgba(120, 50, 10, 0.55)",
-    brightness: 0.6,
+    photo:
+      "https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=1200&q=80",
   },
 };
 
@@ -45,21 +41,22 @@ const HeroScenePanel = () => {
 
   return (
     <div className="relative w-full rounded-2xl bg-[#1A1A1A] border border-white/5 shadow-[0_30px_80px_-20px_hsl(0_0%_0%/0.8)] p-6 md:p-8">
-      {/* Room photo with scene-tinted overlay */}
-      <div
-        className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#0d0d0d]"
-        style={{ transition: "all 0.4s ease", filter: `brightness(${s.brightness})` }}
-      >
-        <img
-          src={ROOM_PHOTO}
-          alt="Modern living room with smart lighting"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: s.overlay, transition: "all 0.4s ease" }}
-        />
+      {/* Room photos — fade between three distinct scenes */}
+      <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#0d0d0d]">
+        {(Object.keys(scenes) as SceneKey[]).map((key) => {
+          const sc = scenes[key];
+          const isActive = active === key;
+          return (
+            <img
+              key={key}
+              src={sc.photo}
+              alt={`${sc.label} scene — ${sc.caption}`}
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+              style={{ opacity: isActive ? 1 : 0 }}
+              loading="eager"
+            />
+          );
+        })}
       </div>
 
       {/* Scene buttons */}
