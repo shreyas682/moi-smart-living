@@ -22,7 +22,7 @@ const solutions = [
     eyebrow: "Homes",
     icon: Home,
     image:
-      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800",
     imageAlt: "Warmly lit modern living room with pendant and accent lighting",
     title: "Lighting scenes that match your mood",
     description:
@@ -39,7 +39,7 @@ const solutions = [
     eyebrow: "Cafes & Restaurants",
     icon: Coffee,
     image:
-      "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=800",
+      "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800",
     imageAlt: "Cozy cafe interior with warm Edison bulb string lights",
     title: "Ambience that changes with your hours",
     description:
@@ -56,7 +56,7 @@ const solutions = [
     eyebrow: "Boutiques & Retail",
     icon: Store,
     image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800",
+      "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800",
     imageAlt: "Boutique store with focused accent spotlights on clothing displays",
     title: "Lighting that sells",
     description:
@@ -73,7 +73,7 @@ const solutions = [
     eyebrow: "Offices",
     icon: Building2,
     image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800",
     imageAlt: "Bright modern office with clean overhead lighting and warm workstation lamps",
     title: "Productive spaces, zero wiring chaos",
     description:
