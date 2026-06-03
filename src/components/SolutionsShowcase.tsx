@@ -22,8 +22,8 @@ const solutions = [
     eyebrow: "Homes",
     icon: Home,
     image:
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Warmly lit modern living room with ambient lighting",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800",
+    imageAlt: "Warmly lit modern living room with pendant and accent lighting",
     title: "Lighting scenes that match your mood",
     description:
       "Warm dinners, focused work, lazy Sundays — one tap reshapes every room.",
@@ -39,8 +39,8 @@ const solutions = [
     eyebrow: "Cafes & Restaurants",
     icon: Coffee,
     image:
-      "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Cozy cafe interior with warm pendant lighting",
+      "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=800",
+    imageAlt: "Cozy cafe interior with warm Edison bulb string lights",
     title: "Ambience that changes with your hours",
     description:
       "Bright mornings, golden evenings, late-night low — automated to your service hours.",
@@ -56,8 +56,8 @@ const solutions = [
     eyebrow: "Boutiques & Retail",
     icon: Store,
     image:
-      "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Boutique retail store with accent lighting on merchandise",
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800",
+    imageAlt: "Boutique store with focused accent spotlights on clothing displays",
     title: "Lighting that sells",
     description:
       "Accent fixtures, product spotlights and window scenes — controlled like a campaign.",
@@ -73,8 +73,8 @@ const solutions = [
     eyebrow: "Offices",
     icon: Building2,
     image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Bright modern office workspace with even lighting",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
+    imageAlt: "Bright modern office with clean overhead lighting and warm workstation lamps",
     title: "Productive spaces, zero wiring chaos",
     description:
       "Retrofit lighting into any office floor without rewiring or shutdown.",
