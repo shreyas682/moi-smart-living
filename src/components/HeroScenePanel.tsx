@@ -14,24 +14,24 @@ const scenes: Record<
 > = {
   morning: {
     label: "Morning",
-    caption: "Cool white • 5500K",
+    caption: "COOL WHITE • 5500K",
     icon: Sun,
     photo:
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb3?w=800",
   },
   dinner: {
     label: "Dinner",
-    caption: "Warm amber • 2700K",
+    caption: "WARM AMBER • 2700K",
     icon: UtensilsCrossed,
     photo:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80",
+      "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=800",
   },
   night: {
     label: "Night",
-    caption: "Dim glow • 1800K",
+    caption: "DIM GLOW • 1800K",
     icon: Moon,
     photo:
-      "https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=1200&q=80",
+      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800",
   },
 };
 
