@@ -1,10 +1,16 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
-import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
 import { motion } from "framer-motion";
-import { Mail, Clock } from "lucide-react";
+import { Mail, Clock, MapPin } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 const Contact = () => {
+  const [submitted, setSubmitted] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -25,28 +31,14 @@ const Contact = () => {
                 Let's design your <span className="text-gradient-cyan">lighting</span>
               </h1>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-10 max-w-lg">
-                Talk to our lighting team. We'll help you plan scenes, zones and a clean install for your home, cafe, boutique or office.
+                Tell us about your space and we'll get back within 24 hours to set up your demo.
               </p>
 
-              {/* Trust signals */}
-              <ul className="space-y-3 mb-10">
-                {[
-                  "Avg. response time: within 24 hours",
-                  "Serving homes, cafes, boutiques & offices",
-                  "Based in Delhi NCR — Pan-India installations",
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-3 text-foreground/80">
-                    <span className="mt-1 text-primary">✦</span>
-                    <span className="text-sm md:text-base">{t}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Support cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
                   { icon: Mail, label: "Email", value: "contact@moitech.com" },
                   { icon: Clock, label: "Hours", value: "Mon–Sat · 9–7" },
+                  { icon: MapPin, label: "Based In", value: "Delhi NCR" },
                 ].map((c) => (
                   <div
                     key={c.label}
@@ -72,8 +64,41 @@ const Contact = () => {
             >
               <div className="relative">
                 <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary/20 to-transparent blur-2xl pointer-events-none" />
-                <div className="relative bg-white/80 backdrop-blur-xl border border-border rounded-3xl shadow-xl p-2">
-                  <ContactSection />
+                <div className="relative bg-white/90 backdrop-blur-xl border border-border rounded-3xl shadow-xl p-8">
+                  {submitted ? (
+                    <div className="text-center py-12">
+                      <h3 className="text-2xl font-bold text-foreground mb-2">Thank you!</h3>
+                      <p className="text-muted-foreground">We'll be in touch within 24 hours.</p>
+                    </div>
+                  ) : (
+                    <form
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        setSubmitted(true);
+                      }}
+                      className="space-y-5"
+                    >
+                      <div className="space-y-2">
+                        <Label htmlFor="c-name" className="text-sm font-medium">Name</Label>
+                        <Input id="c-name" placeholder="Your name" required className="bg-secondary border-0" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="c-email" className="text-sm font-medium">Email</Label>
+                        <Input id="c-email" type="email" placeholder="you@example.com" required className="bg-secondary border-0" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="c-phone" className="text-sm font-medium">Phone</Label>
+                        <Input id="c-phone" type="tel" placeholder="+91 98765 43210" required className="bg-secondary border-0" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="c-message" className="text-sm font-medium">Message</Label>
+                        <Textarea id="c-message" placeholder="Tell us about your space..." rows={5} required className="bg-secondary border-0" />
+                      </div>
+                      <Button type="submit" className="w-full btn-primary-cyan border-0 h-12 text-base font-bold" size="lg">
+                        Book a Demo
+                      </Button>
+                    </form>
+                  )}
                 </div>
               </div>
             </motion.div>
