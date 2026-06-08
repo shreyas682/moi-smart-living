@@ -117,7 +117,7 @@ const SolutionsShowcase = () => {
           className="max-w-2xl mx-auto text-center mb-20"
         >
           <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
-            Use Cases
+            Solutions
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
             Lighting for every kind of space
