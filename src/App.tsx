@@ -12,7 +12,6 @@ const Products = lazy(() => import("./pages/Products"));
 const Solutions = lazy(() => import("./pages/Solutions"));
 const Partners = lazy(() => import("./pages/Partners"));
 const Contact = lazy(() => import("./pages/Contact"));
-const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const RouteFallback = () => (
@@ -47,9 +46,6 @@ const AnimatedRoutes = () => {
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/product-smart-switch" element={<ProductDetail />} />
-            <Route path="/product-led-white" element={<ProductDetail />} />
-            <Route path="/product-led-rgb" element={<ProductDetail />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

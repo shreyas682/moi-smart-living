@@ -2,13 +2,53 @@ import Navbar from "@/components/Navbar";
 import FeaturesSection from "@/components/FeaturesSection";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
 import FooterSection from "@/components/FooterSection";
-import { Home as HomeIcon, Coffee, Store, Building2 } from "lucide-react";
+import {
+  Home as HomeIcon,
+  Coffee,
+  Store,
+  Building2,
+  Hotel,
+  Sparkles,
+  ArrowRight,
+} from "lucide-react";
 
 const solutionItems = [
-  { icon: HomeIcon, title: "Homes", description: "Scenes that match your mood.", href: "#home" },
-  { icon: Coffee, title: "Cafes & Restaurants", description: "Ambience tuned to service hours.", href: "#cafe" },
-  { icon: Store, title: "Boutiques & Retail", description: "Window & accent lighting on schedule.", href: "#retail" },
-  { icon: Building2, title: "Offices", description: "Retrofitted, zero rewiring chaos.", href: "#office" },
+  {
+    icon: HomeIcon,
+    title: "Homes",
+    description: "Automate mood lighting for living rooms, bedrooms, entrances. No rewiring.",
+    href: "#home",
+  },
+  {
+    icon: Coffee,
+    title: "Cafes & Restaurants",
+    description: "Auto-set ambiance for breakfast, lunch, dinner service.",
+    href: "#cafe",
+  },
+  {
+    icon: Store,
+    title: "Boutiques & Retail",
+    description: "Highlight products with precision lighting that adapts to time of day.",
+    href: "#retail",
+  },
+  {
+    icon: Building2,
+    title: "Offices & Coworking",
+    description: "Improve focus with tunable white lighting across work zones.",
+    href: "#office",
+  },
+  {
+    icon: Hotel,
+    title: "Hotels & Hospitality",
+    description: "Scene-based room lighting for premium guest experience.",
+    href: "/contact",
+  },
+  {
+    icon: Sparkles,
+    title: "Salons & Spas",
+    description: "Warm, dimmable light zones for calm professional atmosphere.",
+    href: "/contact",
+  },
 ];
 
 const Solutions = () => {
@@ -24,7 +64,7 @@ const Solutions = () => {
             <p className="text-muted-foreground max-w-xl mx-auto">
               Designed for homes, cafes, boutiques and offices — installed in hours.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
               {solutionItems.map((item) => (
                 <a
                   key={item.title}
@@ -37,7 +77,10 @@ const Solutions = () => {
                   <h2 className="text-xl font-bold tracking-tight text-foreground mb-2">
                     {item.title}
                   </h2>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-5">{item.description}</p>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all">
+                    Learn More <ArrowRight size={14} />
+                  </span>
                 </a>
               ))}
             </div>
