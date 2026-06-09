@@ -4,7 +4,6 @@ import {
   Building2,
   Palette,
   Hammer,
-  Store,
   Tag,
   FileText,
   LifeBuoy,
@@ -15,7 +14,6 @@ const partnerTypes = [
   { icon: Palette, title: "Interior Designers", desc: "Elevate every project with design-grade lighting." },
   { icon: Building2, title: "Architects", desc: "Specify wireless smart lighting in your drawings." },
   { icon: Hammer, title: "Renovation Firms", desc: "Add premium lighting to every renovation, without rewiring." },
-  { icon: Store, title: "Boutique Retailers", desc: "Differentiate your spaces with scene-driven lighting." },
 ];
 
 const benefits = [
@@ -93,7 +91,7 @@ const PartnersUpgradeSection = () => {
               Find your place in the MOI partnership ecosystem.
             </p>
           </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {partnerTypes.map((p, i) => (
               <motion.div
                 key={p.title}
@@ -155,40 +153,6 @@ const PartnersUpgradeSection = () => {
         </div>
       </section>
 
-      {/* Premium CTA */}
-      <section className="relative py-28 px-6 footer-dark overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/15 blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-primary/10 blur-[140px] pointer-events-none" />
-        <div className="relative z-10 container mx-auto max-w-3xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-white mb-5 [text-shadow:0_0_30px_hsl(26_100%_50%/0.3)]">
-              Ready to grow with <span className="text-primary">MOI Technologies?</span>
-            </h2>
-            <p className="text-white/70 text-lg mb-10">
-              Talk to our partnerships team and get a custom plan for your business.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link
-                to="/contact"
-                className="px-10 py-4 rounded-lg btn-primary-cyan text-base font-bold tracking-tight transition-transform hover:scale-105"
-              >
-                Become a Partner
-              </Link>
-              <Link
-                to="/contact"
-                className="px-10 py-4 rounded-lg border border-white/20 text-white text-base font-semibold tracking-tight hover:bg-white/10 transition-colors"
-              >
-                Book Partnership Demo
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </>
   );
 };
