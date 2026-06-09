@@ -2,15 +2,7 @@ import Navbar from "@/components/Navbar";
 import FeaturesSection from "@/components/FeaturesSection";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
 import FooterSection from "@/components/FooterSection";
-import {
-  Home as HomeIcon,
-  Coffee,
-  Store,
-  Building2,
-  Hotel,
-  Sparkles,
-  ArrowRight,
-} from "lucide-react";
+import { Home as HomeIcon, UtensilsCrossed, Store, ArrowRight } from "lucide-react";
 
 const solutionItems = [
   {
@@ -20,34 +12,16 @@ const solutionItems = [
     href: "#home",
   },
   {
-    icon: Coffee,
-    title: "Cafes & Restaurants",
-    description: "Auto-set ambiance for breakfast, lunch, dinner service.",
-    href: "#cafe",
+    icon: UtensilsCrossed,
+    title: "Hospitality",
+    description: "Ambience that shifts with your service hours — cafes, restaurants and hotels.",
+    href: "#hospitality",
   },
   {
     icon: Store,
-    title: "Boutiques & Retail",
+    title: "Retail",
     description: "Highlight products with precision lighting that adapts to time of day.",
     href: "#retail",
-  },
-  {
-    icon: Building2,
-    title: "Offices & Coworking",
-    description: "Improve focus with tunable white lighting across work zones.",
-    href: "#office",
-  },
-  {
-    icon: Hotel,
-    title: "Hotels & Hospitality",
-    description: "Scene-based room lighting for premium guest experience.",
-    href: "/contact",
-  },
-  {
-    icon: Sparkles,
-    title: "Salons & Spas",
-    description: "Warm, dimmable light zones for calm professional atmosphere.",
-    href: "/contact",
   },
 ];
 

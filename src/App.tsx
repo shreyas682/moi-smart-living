@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
@@ -11,7 +11,6 @@ import ScrollToTop from "./components/ScrollToTop";
 const Products = lazy(() => import("./pages/Products"));
 const Solutions = lazy(() => import("./pages/Solutions"));
 const Partners = lazy(() => import("./pages/Partners"));
-const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const RouteFallback = () => (
@@ -45,7 +44,7 @@ const AnimatedRoutes = () => {
             <Route path="/products" element={<Products />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/partners" element={<Partners />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact" element={<Navigate to="/partners" replace />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
