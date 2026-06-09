@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-livingroom.jpg.asset.json";
+import heroImage from "@/assets/hero-living-warm.png.asset.json";
 
 const HeroSection = () => {
   return (
