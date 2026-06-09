@@ -7,7 +7,6 @@ const navLinks = [
   { name: "Products", href: "/products" },
   { name: "Solutions", href: "/solutions" },
   { name: "Partners", href: "/partners" },
-  { name: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -44,7 +43,7 @@ const Navbar = () => {
             </Link>
           ))}
           <Link
-            to="/contact"
+            to="/partners#work-with-moi"
             className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight transition-transform duration-300 hover:scale-105"
           >
             Book Demo
@@ -73,7 +72,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Link
-              to="/contact"
+              to="/partners#work-with-moi"
               className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold text-center"
               onClick={() => setMobileOpen(false)}
             >
