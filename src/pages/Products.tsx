@@ -23,10 +23,10 @@ const ProductBlock = ({ product }: { product: (typeof products)[number] }) => {
               {product.shortDescription}
             </p>
             <Link
-              to="/contact"
+              to="/partners#work-with-moi"
               className="inline-block px-10 py-4 rounded-lg btn-primary-cyan text-base font-bold tracking-tight transition-transform hover:scale-105"
             >
-              Contact Us
+              Book a Demo
             </Link>
           </div>
 
