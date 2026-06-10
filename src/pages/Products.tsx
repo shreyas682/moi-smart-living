@@ -146,7 +146,7 @@ const Products = () => {
           <div key={product.href}>
             <ProductBlock product={product} />
             {idx < products.length - 1 && (
-              <div className="w-full h-24 bg-[#0B0B0B]" aria-hidden="true" />
+              <div className="w-full h-24 bg-[#0b0b0d]" aria-hidden="true" />
             )}
           </div>
         ))}

@@ -3,7 +3,7 @@ import { Palette } from "lucide-react";
 
 const ColorChangeCallout = () => {
   return (
-    <section className="relative overflow-hidden py-20 md:py-24 px-6 bg-[#0B0B0B] text-white">
+    <section className="relative overflow-hidden py-20 md:py-24 px-6 bg-[#0b0b0d] text-white">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-primary/15 blur-[140px] pointer-events-none" />
       <motion.div
         initial={{ opacity: 0, y: 20 }}

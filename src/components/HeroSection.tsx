@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-living-warm.png.asset.json";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col lg:block overflow-hidden pt-24 pb-0 bg-[#0B0B0B] text-white">
+    <section className="relative min-h-screen flex flex-col lg:block overflow-hidden pt-24 pb-0 bg-[#0b0b0d] text-white">
       {/* Desktop: full-width background image with left-half dark overlay */}
       <div
         className="hidden lg:block absolute inset-0 bg-cover bg-center"
