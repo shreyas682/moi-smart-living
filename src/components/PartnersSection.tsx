@@ -5,10 +5,7 @@ const PartnersSection = () => {
   return (
     <section
       id="partners"
-      className="py-24 md:py-32 px-6 relative overflow-hidden"
-      style={{
-        background: "linear-gradient(180deg, hsl(210 80% 8%) 0%, hsl(0 0% 1%) 100%)",
-      }}
+      className="py-24 md:py-32 px-6 relative overflow-hidden footer-dark"
     >
       {/* Ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
