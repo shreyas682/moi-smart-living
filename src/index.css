@@ -19,10 +19,10 @@
     --primary-foreground: 0 0% 100%;
     --primary-glow: 25 100% 50%;
 
-    --secondary: 34 25% 88%;
+    --secondary: 0 0% 96%;
     --secondary-foreground: 240 8% 5%;
 
-    --muted: 34 25% 88%;
+    --muted: 0 0% 96%;
     --muted-foreground: 240 6% 35%;
 
     --accent: 25 100% 40%;
@@ -31,8 +31,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 34 18% 82%;
-    --input: 34 18% 85%;
+    --border: 0 0% 90%;
+    --input: 0 0% 92%;
     --ring: 25 100% 40%;
 
     --radius: 0.75rem;
@@ -41,9 +41,9 @@
     --sidebar-foreground: 240 8% 15%;
     --sidebar-primary: 25 100% 40%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 34 25% 88%;
+    --sidebar-accent: 0 0% 96%;
     --sidebar-accent-foreground: 240 8% 15%;
-    --sidebar-border: 34 18% 82%;
+    --sidebar-border: 0 0% 90%;
     --sidebar-ring: 25 100% 40%;
 
     /* Glow tokens */
@@ -67,7 +67,7 @@
     --navy-deep: 215 75% 9%;
     --navy-foreground: 0 0% 100%;
     --navy-muted: 215 30% 75%;
-    --soft-orange-bg: 25 60% 92%;
+    --soft-orange-bg: 0 0% 100%;
     --gradient-navy: linear-gradient(
       180deg,
       hsl(240 8% 5%) 0%,
@@ -152,16 +152,18 @@
 
   .card-premium {
     background: hsl(0 0% 100%);
-    border: 1px solid hsl(34 18% 82%);
+    border: 1px solid hsl(0 0% 90%);
     box-shadow:
-      0 1px 3px hsl(0 0% 0% / 0.05),
-      0 1px 2px hsl(0 0% 0% / 0.03);
+      0 10px 25px -5px hsl(0 0% 0% / 0.10),
+      0 4px 10px -3px hsl(0 0% 0% / 0.06);
     transition: all 0.4s ease;
   }
 
   .card-premium:hover {
     border-color: hsl(25 100% 40% / 0.5);
-    box-shadow: var(--glow-cyan-neon);
+    box-shadow:
+      0 20px 40px -10px hsl(0 0% 0% / 0.15),
+      0 8px 16px -6px hsl(0 0% 0% / 0.10);
   }
 
   .section-divider {
