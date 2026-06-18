@@ -125,18 +125,6 @@ const solutions = [
   },
 ];
 
-const LifestyleImage = ({ src, alt, eyebrow }: { src: string; alt: string; eyebrow: string }) => (
-  <div className="relative w-full aspect-[4/5] md:aspect-[5/6] rounded-3xl overflow-hidden bg-[#1A1A1A] shadow-[0_30px_80px_-30px_hsl(0_0%_0%/0.5)]">
-    <img src={src} alt={alt} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
-    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-      <p className="text-[10px] md:text-xs tracking-[0.25em] text-primary uppercase font-semibold mb-1">
-        {eyebrow}
-      </p>
-      <p className="text-white text-base md:text-lg font-semibold">Real spaces. Real lighting.</p>
-    </div>
-  </div>
-);
 
 const SolutionsShowcase = () => {
   return (
