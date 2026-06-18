@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { Link } from "react-router-dom";
 import { isProductHeroImage, productMedia, products } from "@/data/products";
 import { cn } from "@/lib/utils";
 
