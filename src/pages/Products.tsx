@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { Link } from "react-router-dom";
 import { isProductHeroImage, productMedia, products } from "@/data/products";
 import { cn } from "@/lib/utils";
 
@@ -19,15 +18,9 @@ const ProductBlock = ({ product }: { product: (typeof products)[number] }) => {
             <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-foreground mb-6 leading-tight">
               {product.name}
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed font-medium">
+            <p className="text-lg text-muted-foreground max-w-xl leading-relaxed font-medium">
               {product.shortDescription}
             </p>
-            <Link
-              to="/partners#work-with-moi"
-              className="inline-block px-10 py-4 rounded-lg btn-primary-cyan text-base font-bold tracking-tight transition-transform hover:scale-105"
-            >
-              Book a Demo
-            </Link>
           </div>
 
           <div
