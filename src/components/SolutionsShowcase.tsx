@@ -125,103 +125,120 @@ const solutions = [
   },
 ];
 
-
 const SolutionsShowcase = () => {
   return (
-    <section className="py-24 px-6">
-      <div className="container mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto text-center mb-20"
-        >
-          <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
-            Solutions
-          </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
-            Lighting for every kind of space
-          </h2>
-          <p className="text-muted-foreground">
-            Premium smart lighting for homes, hospitality and retail — retrofitted in hours.
-          </p>
-        </motion.div>
-
-        <div className="space-y-28">
-          {solutions.map((s, i) => {
-            const reverse = i % 2 === 1;
-            return (
-              <motion.div
-                key={s.id}
-                id={s.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.7 }}
-                className="scroll-mt-28"
-              >
-                <div
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
-                    reverse ? "lg:[&>div:first-child]:order-2" : ""
-                  }`}
-                >
-                  <div>
-                    <p className="text-xs font-semibold tracking-[0.25em] text-primary uppercase mb-5">
-                      {s.eyebrow}
-                    </p>
-                    <h3 className="text-2xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
-                      {s.title}
-                    </h3>
-                    <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8">
-                      {s.description}
-                    </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {s.features.map((f) => (
-                        <div
-                          key={f.label}
-                          className="group flex items-center gap-3 p-4 rounded-xl bg-white border border-border hover:border-primary/50 hover:shadow-md transition-all duration-300"
-                        >
-                          <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
-                            <f.icon size={18} />
-                          </div>
-                          <span className="text-sm font-medium text-foreground">{f.label}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <LifestyleImage src={s.image} alt={s.imageAlt} eyebrow={s.eyebrow} />
-                </div>
-
-                {/* How Moi makes it happen */}
-                <div className="mt-12">
-                  <h4 className="text-lg md:text-xl font-semibold tracking-tight text-foreground mb-6">
-                    How Moi makes it happen
-                  </h4>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                    {s.how.map((h) => (
-                      <div
-                        key={h.title}
-                        className="bg-secondary/40 rounded-2xl p-6"
-                      >
-                        <div className="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-primary/10 text-primary mb-4">
-                          <h.icon size={20} strokeWidth={1.8} />
-                        </div>
-                        <h5 className="text-base font-bold tracking-tight text-foreground mb-2">
-                          {h.title}
-                        </h5>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {h.desc}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+    <section>
+      {/* Section header */}
+      <div className="py-24 px-6">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl mx-auto text-center"
+          >
+            <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
+              Solutions
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
+              Lighting for every kind of space
+            </h2>
+            <p className="text-muted-foreground">
+              Premium smart lighting for homes, hospitality and retail — retrofitted in hours.
+            </p>
+          </motion.div>
         </div>
       </div>
+
+      {solutions.map((s, i) => (
+        <div key={s.id}>
+          {/* Full-bleed image background with overlaid text */}
+          <motion.div
+            id={s.id}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7 }}
+            className="relative min-h-[600px] md:min-h-[720px] lg:min-h-[800px] flex items-center overflow-hidden scroll-mt-28"
+          >
+            {/* Background image */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${s.image})` }}
+              aria-hidden="true"
+            />
+            {/* Dark overlay */}
+            <div
+              className="absolute inset-0 bg-black/55"
+              aria-hidden="true"
+            />
+
+            {/* Content */}
+            <div className="relative z-10 container mx-auto px-6 py-20 md:py-24">
+              <div className="max-w-3xl">
+                <p className="text-xs font-semibold tracking-[0.25em] text-primary uppercase mb-5">
+                  {s.eyebrow}
+                </p>
+                <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
+                  {s.title}
+                </h3>
+                <p className="text-white/80 text-base md:text-lg leading-relaxed mb-10 max-w-2xl">
+                  {s.description}
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {s.features.map((f) => (
+                    <div
+                      key={f.label}
+                      className="group flex items-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 hover:border-primary/50 hover:bg-white/15 transition-all duration-300"
+                    >
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-white/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <f.icon size={18} />
+                      </div>
+                      <span className="text-sm font-medium text-white">{f.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Caption */}
+              <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8">
+                <p className="text-white text-base md:text-lg font-semibold">
+                  Real spaces. Real lighting.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* How Moi makes it happen */}
+          <div className="py-16 md:py-20 px-6 bg-background">
+            <div className="container mx-auto">
+              <h4 className="text-lg md:text-xl font-semibold tracking-tight text-foreground mb-6">
+                How Moi makes it happen
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {s.how.map((h) => (
+                  <div
+                    key={h.title}
+                    className="bg-secondary/40 rounded-2xl p-6"
+                  >
+                    <div className="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-primary/10 text-primary mb-4">
+                      <h.icon size={20} strokeWidth={1.8} />
+                    </div>
+                    <h5 className="text-base font-bold tracking-tight text-foreground mb-2">
+                      {h.title}
+                    </h5>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {h.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
     </section>
   );
 };
