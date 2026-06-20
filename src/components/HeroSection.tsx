@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-living-warm.png.asset.json";
+import heroImage from "@/assets/image 1.png";
 
 const HeroSection = () => {
   return (
@@ -8,7 +8,7 @@ const HeroSection = () => {
       {/* Full-bleed background image across all viewports */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage.url})` }}
+        style={{ backgroundImage: `url(${heroImage})` }}
         aria-hidden="true"
       />
       {/* Readability overlay: darker on the left on desktop, full dim on mobile */}

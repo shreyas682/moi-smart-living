@@ -22,15 +22,15 @@ import {
   Wand2,
   Minus,
 } from "lucide-react";
-import homesImg from "@/assets/homes-warm.jpg.asset.json";
-import hospitalityImg from "@/assets/hospitality-cove.jpg.asset.json";
-import retailImg from "@/assets/retail-linear.jpg.asset.json";
+import homesImg from "@/assets/image 3.jpeg";
+import hospitalityImg from "@/assets/image 6.jpeg";
+import retailImg from "@/assets/image 10.jpeg";
 
 const solutions = [
   {
     id: "home",
     eyebrow: "HOMES",
-    image: homesImg.url,
+    image: homesImg,
     imageAlt: "Warmly lit modern living room with cove lighting",
     title: "Lighting scenes that match your mood",
     description:
@@ -62,7 +62,7 @@ const solutions = [
   {
     id: "hospitality",
     eyebrow: "HOSPITALITY",
-    image: hospitalityImg.url,
+    image: hospitalityImg,
     imageAlt: "Restaurant interior with linear cove lighting",
     title: "Ambience that works around your hours",
     description:
@@ -94,7 +94,7 @@ const solutions = [
   {
     id: "retail",
     eyebrow: "RETAIL",
-    image: retailImg.url,
+    image: retailImg,
     imageAlt: "Retail boutique with linear LED lighting and accent spotlights",
     title: "Lighting that sells",
     description:
