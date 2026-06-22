@@ -1,6 +1,7 @@
 import twoNodeSmartSwitchHero from "@/assets/two-node-smart-switch-hero.png";
 import ledControllerWhiteLightHero from "@/assets/led-controller-white-light-hero.png";
 import ledControllerRgbHero from "@/assets/led-controller-rgb-hero.png";
+import whiteProduct from "@/assets/white-product.png";
 import rgbSteps from "@/assets/rgb-steps.png";
 import rgbAmbient from "@/assets/rgb-ambient.png";
 import rgbParty from "@/assets/rgb-party.png";
@@ -26,9 +27,10 @@ export function isProductHeroImage(href: string): boolean {
 
 export const productMedia: Record<
   string,
-  { stepsImage: string; gallery: { src: string; caption: string }[] }
+  { heroImage: string; stepsImage: string; gallery: { src: string; caption: string }[] }
 > = {
   "/products#smart-switch": {
+    heroImage: twoNodeSmartSwitchHero,
     stepsImage: switchSteps,
     gallery: [
       { src: switchLivingRoom, caption: "Living Room Lights ON" },
@@ -37,6 +39,7 @@ export const productMedia: Record<
     ],
   },
   "/products#led-rgb": {
+    heroImage: ledControllerRgbHero,
     stepsImage: rgbSteps,
     gallery: [
       { src: rgbAmbient, caption: "Ambient Lighting" },
@@ -45,6 +48,7 @@ export const productMedia: Record<
     ],
   },
   "/products#led-white": {
+    heroImage: whiteProduct,
     stepsImage: whiteSteps,
     gallery: [
       { src: whiteKitchen, caption: "Kitchen Lighting" },

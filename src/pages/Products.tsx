@@ -12,8 +12,8 @@ const ProductBlock = ({ product }: { product: (typeof products)[number] }) => {
   return (
     <article id={slug} className="scroll-mt-28">
       {/* Hero */}
-      <section className="px-6 py-20">
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section className="px-6 py-12">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="text-left">
             <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-foreground mb-6 leading-tight">
               {product.name}
@@ -25,22 +25,22 @@ const ProductBlock = ({ product }: { product: (typeof products)[number] }) => {
 
           <div
             className={cn(
-              "group relative rounded-3xl overflow-hidden shadow-2xl",
+              "group relative rounded-3xl overflow-hidden shadow-2xl w-full max-w-[440px] mx-auto md:mx-0 md:ml-auto",
               heroGraphic
                 ? "bg-zinc-950 ring-1 ring-white/[0.08] shadow-black/40"
                 : "bg-secondary",
             )}
           >
             <img
-              src={product.image}
+              src={media ? media.heroImage : product.image}
               alt={product.name}
               loading="lazy"
               decoding="async"
               className={cn(
                 "w-full object-contain transition-transform duration-300 ease-out",
                 heroGraphic
-                  ? "h-[min(72vw,520px)] sm:h-[440px] md:h-[560px] py-6 md:py-10 px-3 sm:px-6 group-hover:scale-[1.02]"
-                  : "h-[400px] md:h-[520px] group-hover:scale-105",
+                  ? "h-[360px] sm:h-[400px] p-8 md:p-10 group-hover:scale-[1.02]"
+                  : "h-[320px] sm:h-[360px] group-hover:scale-105",
               )}
             />
           </div>
@@ -135,13 +135,8 @@ const Products = () => {
             Purpose-built hardware for design-grade smart lighting.
           </p>
         </div>
-        {products.map((product, idx) => (
-          <div key={product.href}>
-            <ProductBlock product={product} />
-            {idx < products.length - 1 && (
-              <div className="w-full h-24 bg-[#0b0b0d]" aria-hidden="true" />
-            )}
-          </div>
+        {products.map((product) => (
+          <ProductBlock key={product.href} product={product} />
         ))}
       </main>
       <FooterSection />
