@@ -2,11 +2,10 @@ import { Mail, Twitter, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const quickLinks = [
-  { name: "Home", href: "/" },
-  { name: "Products", href: "/products" },
-  { name: "Solutions", href: "/solutions" },
-  { name: "Partners", href: "/partners" },
-  { name: "Contact", href: "/contact" },
+  { name: "About Us", href: "/#about" },
+  { name: "Blog", href: "/blog" },
+  { name: "FAQ", href: "/#contact" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 const FooterSection = () => {
@@ -37,6 +36,11 @@ const FooterSection = () => {
 
         <div>
           <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-5">Connect</h4>
+          <p className="text-sm text-white/80 leading-relaxed mb-4">
+            MOI Technologies<br />
+            Rohini, Sector 13, New Delhi<br />
+            India
+          </p>
           <div className="flex items-center gap-2 text-sm text-white/80 mb-5">
             <Mail size={16} className="text-primary" /> contact@moitech.com
           </div>

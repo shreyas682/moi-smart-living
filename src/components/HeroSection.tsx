@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import heroImage from "@/assets/image 1.png";
 
 const HeroSection = () => {
@@ -32,20 +31,6 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-white/75 mb-10 max-w-xl leading-relaxed font-medium">
             Retrofit smart lighting for homes, cafes, boutiques and offices — no rewiring, one app.
           </p>
-          <div className="flex flex-wrap items-center gap-4">
-            <Link
-              to="/contact"
-              className="inline-block px-10 py-4 rounded-lg btn-primary-cyan text-base font-bold tracking-tight transition-transform hover:scale-105"
-            >
-              Book a Demo
-            </Link>
-            <Link
-              to="/products"
-              className="inline-block px-10 py-4 rounded-lg border border-white/20 text-white text-base font-semibold tracking-tight hover:bg-white/10 transition-colors"
-            >
-              See Products
-            </Link>
-          </div>
         </motion.div>
       </div>
     </section>

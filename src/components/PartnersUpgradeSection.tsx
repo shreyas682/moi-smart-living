@@ -55,13 +55,13 @@ const PartnersUpgradeSection = () => {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
-                to="/partners#work-with-moi"
+                to="/partners#contact"
                 className="px-8 py-3.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight transition-transform hover:scale-105"
               >
                 Become a Partner
               </Link>
               <Link
-                to="/partners#work-with-moi"
+                to="/partners#contact"
                 className="px-8 py-3.5 rounded-lg border border-white/20 text-white text-sm font-semibold tracking-tight hover:bg-white/10 transition-colors"
               >
                 Book Partnership Demo

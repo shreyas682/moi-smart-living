@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 const Products = lazy(() => import("./pages/Products"));
 const Solutions = lazy(() => import("./pages/Solutions"));
 const Partners = lazy(() => import("./pages/Partners"));
+const Blog = lazy(() => import("./pages/Blog"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const RouteFallback = () => (
@@ -44,6 +45,7 @@ const AnimatedRoutes = () => {
             <Route path="/products" element={<Products />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/partners" element={<Partners />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Navigate to="/partners" replace />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

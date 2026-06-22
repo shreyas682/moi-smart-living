@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Solutions", href: "/solutions" },
+  { name: "Blog", href: "/blog" },
   { name: "Partners", href: "/partners" },
 ];
 
@@ -68,19 +69,27 @@ const Navbar = () => {
             onMouseEnter={() => setProductsOpen(true)}
             onMouseLeave={() => setProductsOpen(false)}
           >
-            <button
-              type="button"
-              onClick={() => setProductsOpen((v) => !v)}
-              aria-haspopup="menu"
-              aria-expanded={productsOpen}
-              className="flex items-center gap-1 text-white hover:text-primary transition-colors duration-300 text-sm font-medium tracking-tight"
-            >
-              Products
-              <ChevronDown
-                size={14}
-                className={`transition-transform duration-200 ${productsOpen ? "rotate-180" : ""}`}
-              />
-            </button>
+            <div className="flex items-center gap-1">
+              <Link
+                to="/products"
+                className="text-white hover:text-primary transition-colors duration-300 text-sm font-medium tracking-tight"
+              >
+                Products
+              </Link>
+              <button
+                type="button"
+                onClick={() => setProductsOpen((v) => !v)}
+                aria-haspopup="menu"
+                aria-expanded={productsOpen}
+                aria-label="Toggle products menu"
+                className="text-white hover:text-primary transition-colors duration-300"
+              >
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${productsOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+            </div>
             {productsOpen && (
               <div
                 role="menu"
@@ -113,10 +122,10 @@ const Navbar = () => {
             </Link>
           ))}
           <Link
-            to="/partners#work-with-moi"
+            to="/partners#contact"
             className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold tracking-tight transition-transform duration-300 hover:scale-105"
           >
-            Book Demo
+            Contact Us
           </Link>
         </div>
 
@@ -139,18 +148,27 @@ const Navbar = () => {
               Home
             </Link>
             <div>
-              <button
-                type="button"
-                onClick={() => setMobileProductsOpen((v) => !v)}
-                className="flex items-center gap-1 text-sm text-white hover:text-primary font-medium transition-colors duration-300"
-                aria-expanded={mobileProductsOpen}
-              >
-                Products
-                <ChevronDown
-                  size={14}
-                  className={`transition-transform duration-200 ${mobileProductsOpen ? "rotate-180" : ""}`}
-                />
-              </button>
+              <div className="flex items-center gap-1">
+                <Link
+                  to="/products"
+                  className="text-sm text-white hover:text-primary font-medium transition-colors duration-300"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Products
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setMobileProductsOpen((v) => !v)}
+                  aria-label="Toggle products menu"
+                  className="text-white hover:text-primary transition-colors duration-300"
+                  aria-expanded={mobileProductsOpen}
+                >
+                  <ChevronDown
+                    size={14}
+                    className={`transition-transform duration-200 ${mobileProductsOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+              </div>
               {mobileProductsOpen && (
                 <div className="mt-3 flex flex-col gap-3 pl-3">
                   {productItems.map((item) => (
@@ -177,11 +195,11 @@ const Navbar = () => {
               </Link>
             ))}
             <Link
-              to="/partners#work-with-moi"
+              to="/partners#contact"
               className="px-6 py-2.5 rounded-lg btn-primary-cyan text-sm font-bold text-center"
               onClick={() => setMobileOpen(false)}
             >
-              Book Demo
+              Contact Us
             </Link>
           </div>
         </div>
