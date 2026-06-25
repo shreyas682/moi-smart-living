@@ -28,16 +28,19 @@ const ProductShowcase = () => {
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
             Lighting <span className="text-gradient-cyan">Products</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-5">
+          <p className="text-muted-foreground max-w-xl mx-auto">
             Purpose-built hardware for design-grade smart lighting.
           </p>
+        </motion.div>
+
+        <div className="flex justify-center mb-12">
           <Link
             to="/products"
-            className="inline-flex items-center gap-1.5 text-base font-semibold text-muted-foreground hover:text-primary transition-colors"
+            className="inline-flex items-center gap-2 text-lg font-bold text-foreground hover:text-primary transition-colors"
           >
-            Browse Products <ArrowRight size={15} />
+            Browse Products <ArrowRight size={17} />
           </Link>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {products.map((p, i) => {
