@@ -10,10 +10,10 @@ const ProductCard = ({ product }: { product: (typeof products)[number] }) => {
   return (
     <div
       onClick={() => navigate(product.href)}
-      className="group cursor-pointer flex flex-col bg-zinc-900 rounded-2xl overflow-hidden border border-white/[0.06] hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/50"
+      className="group cursor-pointer flex flex-col bg-white rounded-2xl overflow-hidden border border-border hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-gray-200"
     >
       {/* Image */}
-      <div className="bg-zinc-950 flex items-center justify-center p-6 min-h-[220px]">
+      <div className="bg-gray-50 flex items-center justify-center p-6 min-h-[220px]">
         <img
           src={product.image}
           alt={product.name}
@@ -25,7 +25,7 @@ const ProductCard = ({ product }: { product: (typeof products)[number] }) => {
       {/* Content */}
       <div className="flex flex-col flex-1 p-6 gap-4">
         <div>
-          <h3 className="text-lg font-extrabold tracking-tight text-white mb-1">
+          <h3 className="text-lg font-extrabold tracking-tight text-foreground mb-1">
             {product.name}
           </h3>
           <p className="text-sm text-zinc-400 leading-snug">{product.tagline}</p>
@@ -33,14 +33,14 @@ const ProductCard = ({ product }: { product: (typeof products)[number] }) => {
 
         <ul className="flex-1 space-y-2">
           {product.cardFeatures.map((f) => (
-            <li key={f} className="flex items-center gap-2 text-sm text-zinc-300">
+            <li key={f} className="flex items-center gap-2 text-sm text-foreground">
               <span className="text-primary font-bold leading-none">✓</span>
               <span>{f}</span>
             </li>
           ))}
         </ul>
 
-        <div className="pt-4 border-t border-white/[0.06]">
+        <div className="pt-4 border-t border-border">
           <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
             Explore Product
             <span className="transition-transform duration-300 group-hover:translate-x-1.5 inline-block">

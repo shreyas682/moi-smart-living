@@ -37,7 +37,7 @@ const HowItWorksSection = () => {
             How It Works
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
-            From sketch to scene — in three steps
+            From sketch to scene — in <span className="text-primary">three steps</span>
           </h2>
           <p className="text-muted-foreground">
             Premium smart lighting, delivered without the install chaos.
@@ -58,7 +58,7 @@ const HowItWorksSection = () => {
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary">
                   <s.icon size={26} strokeWidth={1.6} />
                 </div>
-                <span className="text-xs font-semibold tracking-[0.2em] text-muted-foreground">
+                <span className="text-xs font-semibold tracking-[0.2em] text-primary">
                   STEP {s.step}
                 </span>
               </div>

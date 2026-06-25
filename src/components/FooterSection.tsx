@@ -1,4 +1,4 @@
-import { Mail, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Mail, Twitter, Linkedin, Instagram, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const quickLinks = [
@@ -39,8 +39,8 @@ const FooterSection = () => {
           <div className="flex items-center gap-2 text-sm text-white/80 mb-3">
             <Mail size={16} className="text-primary shrink-0" /> contact@moitech.com
           </div>
-          <div className="text-sm text-white/80 mb-5 pl-6">
-            Rohini Sector 13, New Delhi
+          <div className="flex items-center gap-2 text-sm text-white/80 mb-5">
+            <MapPin size={16} className="text-primary shrink-0" /> Rohini Sector 13, New Delhi
           </div>
           <div className="flex gap-4">
             <a href="#" className="text-white/70 hover:text-primary transition-colors duration-300"><Twitter size={20} /></a>

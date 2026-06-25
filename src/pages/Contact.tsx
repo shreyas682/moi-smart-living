@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import { motion } from "framer-motion";
-import { Mail, Clock } from "lucide-react";
+import { Mail, Clock, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -39,7 +39,7 @@ const Contact = () => {
       <Navbar />
       <main className="pt-24">
         <section className="px-6 py-16 md:py-24">
-          <div className="container mx-auto max-w-2xl flex flex-col gap-16">
+          <div className="container mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-16">
 
             {/* LEFT — Info */}
             <motion.div
@@ -60,9 +60,9 @@ const Contact = () => {
 
               <ul className="space-y-4 mb-10">
                 {bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-3 text-foreground text-sm font-medium">
-                    <span className="text-primary mt-0.5 text-base leading-none">◆</span>
-                    <span>{b}</span>
+                  <li key={b} className="flex items-start gap-3 text-foreground text-sm font-medium group cursor-default">
+                    <span className="text-primary mt-0.5 text-base leading-none transition-transform duration-300 group-hover:scale-125">◆</span>
+                    <span className="transition-colors duration-300 group-hover:text-primary">{b}</span>
                   </li>
                 ))}
               </ul>
@@ -79,6 +79,12 @@ const Contact = () => {
                     <Clock size={15} />
                   </div>
                   Mon–Sat · 9–7
+                </div>
+                <div className="flex items-center gap-3 text-sm text-foreground font-medium">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <MapPin size={15} />
+                  </div>
+                  Rohini Sector 13, New Delhi
                 </div>
               </div>
             </motion.div>
@@ -181,7 +187,7 @@ const Contact = () => {
 
                   <Button
                     type="submit"
-                    className="w-full btn-primary-cyan border-0 h-12 text-base font-bold"
+                    className="w-full btn-primary-cyan border-0 h-12 text-base font-bold transition-all duration-300 hover:bg-[hsl(25,100%,33%)] hover:shadow-[0_8px_30px_hsl(25,100%,40%,0.4)]"
                     size="lg"
                   >
                     Book Demo

@@ -21,8 +21,12 @@ const AboutSection = () => {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="relative z-10 container mx-auto flex flex-col items-center text-center"
       >
-        <h2 className="text-[40px] md:text-[56px] font-extrabold tracking-tight text-[#E8632A] leading-[1.1] max-w-[700px] mx-auto mb-8">
-          We build lighting that thinks.
+        <span className="inline-block text-xs font-semibold tracking-[0.25em] text-primary uppercase mb-4">
+          About Us
+        </span>
+        <h2 className="text-[40px] md:text-[56px] font-extrabold tracking-tight leading-[1.1] max-w-[700px] mx-auto mb-8">
+          <span className="text-white">Lighting-first technology</span>{" "}
+          <span className="text-[#E8632A]">company.</span>
         </h2>
         <p className="text-base md:text-lg text-[#cccccc] leading-[1.8] max-w-[720px] mx-auto">
           MOI Technologies is an Indian lighting technology company building premium
