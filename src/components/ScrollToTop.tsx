@@ -9,7 +9,7 @@ const ScrollToTop = () => {
       const id = hash.replace("#", "");
       const el = document.getElementById(id);
       if (el) {
-        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 350);
         return;
       }
     }
