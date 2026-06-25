@@ -2,45 +2,62 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { products } from "@/data/products";
+import { products, isProductHeroImage } from "@/data/products";
+import { cn } from "@/lib/utils";
 
 const ProductCard = ({ product }: { product: (typeof products)[number] }) => {
   const navigate = useNavigate();
+  const isHeroGraphic = isProductHeroImage(product.href);
 
   return (
     <div
       onClick={() => navigate(product.href)}
-      className="group cursor-pointer flex flex-col bg-white rounded-2xl overflow-hidden border border-border hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-gray-200"
+      className="group card-premium cursor-pointer rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 flex flex-col"
     >
       {/* Image */}
-      <div className="bg-gray-50 flex items-center justify-center p-6 min-h-[220px]">
+      <div
+        className={cn(
+          "overflow-hidden h-64",
+          isHeroGraphic
+            ? "bg-[hsl(0_0%_7%)] flex items-center justify-center p-6 relative"
+            : "bg-secondary",
+        )}
+      >
+        {isHeroGraphic && (
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(28_100%_55%/0.18),transparent_60%)] pointer-events-none" />
+        )}
         <img
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="w-full max-h-[190px] object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+          className={cn(
+            "relative w-full h-full transition-transform duration-500 ease-out",
+            isHeroGraphic
+              ? "object-contain object-center max-h-full group-hover:scale-[1.03]"
+              : "object-cover group-hover:scale-110",
+          )}
         />
       </div>
 
       {/* Content */}
-      <div className="flex flex-col flex-1 p-6 gap-4">
-        <div>
-          <h3 className="text-lg font-extrabold tracking-tight text-foreground mb-1">
-            {product.name}
-          </h3>
-          <p className="text-sm text-zinc-400 leading-snug">{product.tagline}</p>
-        </div>
+      <div className="p-7 flex flex-col flex-1">
+        <h3 className="text-lg font-bold tracking-tight text-foreground mb-2 break-words">
+          {product.name}
+        </h3>
+        <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+          {product.tagline}
+        </p>
 
-        <ul className="flex-1 space-y-2">
+        <ul className="flex-1 space-y-2 mb-6">
           {product.cardFeatures.map((f) => (
-            <li key={f} className="flex items-center gap-2 text-sm text-foreground">
+            <li key={f} className="flex items-center gap-2 text-sm text-foreground/80">
               <span className="text-primary font-bold leading-none">✓</span>
               <span>{f}</span>
             </li>
           ))}
         </ul>
 
-        <div className="pt-4 border-t border-border">
+        <div className="mt-auto pt-4 border-t border-border">
           <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
             Explore Product
             <span className="transition-transform duration-300 group-hover:translate-x-1.5 inline-block">

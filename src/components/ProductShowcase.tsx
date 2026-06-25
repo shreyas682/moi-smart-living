@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { isProductHeroImage, products } from "@/data/products";
 import { cn } from "@/lib/utils";
 
@@ -28,9 +28,15 @@ const ProductShowcase = () => {
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-4">
             Lighting <span className="text-gradient-cyan">Products</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-muted-foreground max-w-xl mx-auto mb-5">
             Purpose-built hardware for design-grade smart lighting.
           </p>
+          <Link
+            to="/products"
+            className="inline-flex items-center gap-1.5 text-base font-semibold text-muted-foreground hover:text-primary transition-colors"
+          >
+            Browse Products <ArrowRight size={15} />
+          </Link>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
